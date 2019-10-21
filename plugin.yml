@@ -1,0 +1,10 @@
+name: Floristcs
+main: land.jay.floristics.Floristics
+version: 2.0
+api-version: 1.14
+softdepend: [GriefPrevention]
+commands:
+    floristics:
+        aliases: flo
+        description: enable or disable growth in GriefPrevention claims
+        usage: /floristics ...
