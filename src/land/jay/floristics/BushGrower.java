@@ -121,10 +121,13 @@ public class BushGrower extends PlantGrower {
             
             Block topBlock = spaceBlock.getRelative(BlockFace.UP);
             topBlock.setType(this.material, false);
-            ((Bisected) spaceBlock.getBlockData()).setHalf(Half.BOTTOM);
-            ((Bisected) topBlock.getBlockData()).setHalf(Half.TOP);
+            Bisected spaceData = (Bisected) spaceBlock.getBlockData();
+            Bisected topData = (Bisected) topBlock.getBlockData();
+            spaceData.setHalf(Half.BOTTOM);
+            topData.setHalf(Half.TOP);
+            spaceBlock.setBlockData(spaceData);
+            topBlock.setBlockData(topData);
         }
-        
     }
         
     /** @return The state of the location for this bush. */

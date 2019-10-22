@@ -128,7 +128,6 @@ public enum BiomeGrower {
         this.plantList.add(new BushGrower(Material.LILY_PAD, false, 0.02, SurfaceType.WATER, 0.01));
         this.plantList.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
         this.plantList.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
-  
     }},
     RIVER {{
         this.plantList.add(new SugarcaneGrower(0.4, 0.005));
