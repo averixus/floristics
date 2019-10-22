@@ -1,3 +1,4 @@
+/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics;
 
 import java.util.Random;
@@ -24,8 +25,8 @@ public abstract class PlantGrower {
     /** @return Whether this plant should grow in this chunk. */
     protected boolean isPresent(World world, int x, int z) {
 
-        int chunkX = x >> 4; //chunk.getX();
-        int chunkZ = z >> 4; //chunk.getZ();
+        int chunkX = x >> 4;
+        int chunkZ = z >> 4;
         Random random = new Random(world.getSeed() +
                 (this.getBlockSeed() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
                 (this.getBlockSeed() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
@@ -50,6 +51,7 @@ public abstract class PlantGrower {
         WATER(Material.WATER),
         END(Material.END_STONE);
         
+        /** Valid materials for this type of surface. */
         private final Set<Material> surfaces;
         
         private SurfaceType(Material... surfaces) {
@@ -57,6 +59,7 @@ public abstract class PlantGrower {
             this.surfaces = Sets.newHashSet(surfaces);
         }
         
+        /** @return Whether the given material is valid for this surface. */
         public boolean isValid(Material material) {
             
             return this.surfaces.contains(material);

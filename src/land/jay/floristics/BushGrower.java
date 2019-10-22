@@ -1,3 +1,4 @@
+/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics;
 
 import java.util.Random;
@@ -15,9 +16,9 @@ import com.google.common.collect.Sets;
 /** Grower for simple plants. */
 public class BushGrower extends PlantGrower {
     
-    /** Materials to search down through for air plants. */
+    /** Materials to search down through for air plant locations. */
     protected static final Set<Material> SEARCH_DOWN_AIR = Sets.newHashSet(Material.AIR, Material.ACACIA_LEAVES, Material.BIRCH_LEAVES, Material.DARK_OAK_LEAVES, Material.JUNGLE_LEAVES, Material.OAK_LEAVES, Material.SPRUCE_LEAVES);
-    /** Materials to search down through for water plants. */
+    /** Materials to search down through for water plant locations. */
     protected static final Set<Material> SEARCH_DOWN_WATER = Sets.newHashSet(Material.AIR, Material.WATER, Material.ICE, Material.BLUE_ICE, Material.FROSTED_ICE, Material.PACKED_ICE);
     
     /** Utility to describe the state of a particular location. */
@@ -63,8 +64,8 @@ public class BushGrower extends PlantGrower {
     /** @return A consistent local density from 0.5 to 1.5 of the default density. */
     protected double getLocalDensity(World world, int x, int z) {
 
-        int chunkX = x >> 4; //chunk.getX();
-        int chunkZ = z >> 4; //chunk.getZ();
+        int chunkX = x >> 4;
+        int chunkZ = z >> 4;
         Random random = new Random(world.getSeed() +
                (this.getBlockSeed() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
                 (this.getBlockSeed() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
@@ -74,27 +75,14 @@ public class BushGrower extends PlantGrower {
     /** @return Whether to keep searching down past this material. */
     protected boolean searchDown(Material checkMaterial) {
         
-        if (this.isWater) {
-            
-            return SEARCH_DOWN_WATER.contains(checkMaterial);
-            
-        } else {
-            
-            return SEARCH_DOWN_AIR.contains(checkMaterial);
-        }
+        return this.isWater ? SEARCH_DOWN_WATER.contains(checkMaterial) :
+            SEARCH_DOWN_AIR.contains(checkMaterial);
     }
     
     /** @return Whether this material is a valid space for the bush. */
     protected boolean isSpace(Material checkMaterial) {
         
-        if (this.isWater) {
-            
-            return checkMaterial == Material.WATER;
-            
-        } else {
-            
-            return checkMaterial == Material.AIR;
-        }
+        return this.isWater ? checkMaterial == Material.WATER : checkMaterial == Material.AIR;
     }
     
     /** Attempts to place this bush at the location. */

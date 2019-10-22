@@ -1,3 +1,4 @@
+/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics;
 
 import java.io.File;
@@ -60,9 +61,6 @@ public class Floristics extends JavaPlugin {
             if (worlds.contains(world.getName())) {
                 
                 Chunk[] chunks = world.getLoadedChunks();
-                
-                for (int i = 0; i < 100; i++) {//TEST
-            
                 Chunk chunk = chunks[RAND.nextInt(chunks.length)];
                 int x = (chunk.getX() * 16) + RAND.nextInt(16);
                 int z = (chunk.getZ() * 16) + RAND.nextInt(16);
@@ -71,12 +69,11 @@ public class Floristics extends JavaPlugin {
                 
                     BiomeGrower.handleGrowth(world, x, z);
                 }
-                }//TEST
             }
         }
     }
     
-    /** @return Whether growth is allowed at this block. */
+    /** @return Whether growth is allowed at this location. */
     private boolean canGrow(World world, int x, int z) {
         
         if (hasGp) {
@@ -86,7 +83,7 @@ public class Floristics extends JavaPlugin {
             
             if (claim != null) {
                 
-                return enabledClaims.contains(Long.valueOf(claim.getID()));
+                return enabledClaims.contains(claim.getID());
             }
         }
         
@@ -156,7 +153,7 @@ public class Floristics extends JavaPlugin {
         return true;
     }
     
-    /** Reads config and claims data. */
+    /** Reads config and claims data from files. */
     private void readData() {
         
         this.saveDefaultConfig();
@@ -198,7 +195,7 @@ public class Floristics extends JavaPlugin {
         }
     }
     
-    /** Saves config and claims data. */
+    /** Saves claims data to file. */
     private void saveData() {
         
         this.saveConfig();

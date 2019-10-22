@@ -1,3 +1,4 @@
+/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics;
 
 import java.util.Set;
@@ -75,7 +76,6 @@ public class TreeGrower extends PlantGrower {
             
             for (int zOffset = - this.radius; zOffset <= this.radius; zOffset++) {
                 
-                // Check in a taxicab circle only
                 if (Math.abs(xOffset) + Math.abs(zOffset) > this.radius) {
                     
                     continue;
@@ -86,7 +86,6 @@ public class TreeGrower extends PlantGrower {
                 Block surfaceBlock = world.getHighestBlockAt(xPos, zPos).getRelative(BlockFace.DOWN);
                 Material surfaceMaterial = surfaceBlock.getType();
                 
-                // Do not generate if there are trees nearby
                 if (surfaceMaterial.data == Leaves.class || surfaceMaterial == Material.BROWN_MUSHROOM_BLOCK || surfaceMaterial == Material.RED_MUSHROOM_BLOCK) {
                     
                     return false;
