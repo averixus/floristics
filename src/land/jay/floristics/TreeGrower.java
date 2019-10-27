@@ -75,10 +75,12 @@ public class TreeGrower extends PlantGrower {
                 
                 int xPos = x + xOffset;
                 int zPos = z + zOffset;
-                Block surfaceBlock = world.getHighestBlockAt(xPos, zPos).getRelative(BlockFace.DOWN);
+                Block spaceBlock = world.getHighestBlockAt(xPos, zPos);
+                Material spaceMaterial = spaceBlock.getType();
+                Block surfaceBlock = spaceBlock.getRelative(BlockFace.DOWN);
                 Material surfaceMaterial = surfaceBlock.getType();
                 
-                if (surfaceMaterial.data == Leaves.class || surfaceMaterial == Material.BROWN_MUSHROOM_BLOCK || surfaceMaterial == Material.RED_MUSHROOM_BLOCK) {
+                if (surfaceMaterial.data == Leaves.class || surfaceMaterial == Material.BROWN_MUSHROOM_BLOCK || surfaceMaterial == Material.RED_MUSHROOM_BLOCK || spaceMaterial == Material.CHORUS_PLANT || spaceMaterial == Material.CHORUS_FLOWER) {
                     
                     return false;
                 }
