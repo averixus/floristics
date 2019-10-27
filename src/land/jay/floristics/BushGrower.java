@@ -24,8 +24,6 @@ public class BushGrower extends PlantGrower {
     /** Utility to describe the state of a particular location. */
     protected enum SearchResult { PRESENT, VALID, INVALID; }
     
-    /** The bush to grow. */
-    protected final Material material;
     /** Whether it's a double height bush. */
     protected final boolean isDouble;
     /** Whether it grows in water. */
@@ -37,18 +35,11 @@ public class BushGrower extends PlantGrower {
 
     BushGrower(Material material, boolean isWater, double density, SurfaceType surface, double chance) {
         
-        super(surface, chance);
-        this.material = material;
+        super(material, surface, chance);
         this.isDouble = material.data == Bisected.class;
         this.isWater = isWater;
         this.density = density;
         this.radius = (int) ((1.0 - this.density) * 8);
-    }
-    
-    @Override
-    protected int getBlockSeed() {
-        
-        return this.material.ordinal();
     }
     
     @Override
@@ -67,8 +58,8 @@ public class BushGrower extends PlantGrower {
         int chunkX = x >> 4;
         int chunkZ = z >> 4;
         Random random = new Random(world.getSeed() +
-               (this.getBlockSeed() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
-                (this.getBlockSeed() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
+               (this.material.ordinal() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
+                (this.material.ordinal() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
         return (0.5 + random.nextDouble()) * this.density;
     }
     
@@ -103,18 +94,30 @@ public class BushGrower extends PlantGrower {
         }
         
         Block spaceBlock = surfaceBlock.getRelative(BlockFace.UP);
-        spaceBlock.setType(this.material, false);
         
         if (this.isDouble) {
             
             Block topBlock = spaceBlock.getRelative(BlockFace.UP);
-            topBlock.setType(this.material, false);
-            Bisected spaceData = (Bisected) spaceBlock.getBlockData();
-            Bisected topData = (Bisected) topBlock.getBlockData();
-            spaceData.setHalf(Half.BOTTOM);
-            topData.setHalf(Half.TOP);
-            spaceBlock.setBlockData(spaceData);
-            topBlock.setBlockData(topData);
+            
+            if (Floristics.hasPermission(spaceBlock.getLocation()) &&
+                    Floristics.hasPermission(topBlock.getLocation())) {
+            
+                spaceBlock.setType(this.material, false);
+                topBlock.setType(this.material, false);
+                Bisected spaceData = (Bisected) spaceBlock.getBlockData();
+                Bisected topData = (Bisected) topBlock.getBlockData();
+                spaceData.setHalf(Half.BOTTOM);
+                topData.setHalf(Half.TOP);
+                spaceBlock.setBlockData(spaceData);
+                topBlock.setBlockData(topData);
+            }
+            
+        } else {
+
+            if (Floristics.hasPermission(spaceBlock.getLocation())) {
+            
+                spaceBlock.setType(this.material, false);
+            }
         }
     }
         

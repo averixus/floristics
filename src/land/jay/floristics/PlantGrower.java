@@ -3,7 +3,6 @@ package land.jay.floristics;
 
 import java.util.Random;
 import java.util.Set;
-import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import com.google.common.collect.Sets;
@@ -11,13 +10,16 @@ import com.google.common.collect.Sets;
 /** Handles growth of a particular plant. */
 public abstract class PlantGrower {
     
+    /** Material of this plant. */
+    public final Material material;
     /** Surfaces this plant can grow on. */
     protected final SurfaceType surface;
     /** Chance of this plant being present in each chunk. */
     protected final double chance;
-    
-    public PlantGrower(SurfaceType surface, double chance) {
         
+    public PlantGrower(Material material, SurfaceType surface, double chance) {
+
+        this.material = material;
         this.surface = surface;
         this.chance = chance;
     }
@@ -25,16 +27,16 @@ public abstract class PlantGrower {
     /** @return Whether this plant should grow in this chunk. */
     protected boolean isPresent(World world, int x, int z) {
 
+        if (this.chance == 1) {
+            return true;
+        }
         int chunkX = x >> 4;
         int chunkZ = z >> 4;
         Random random = new Random(world.getSeed() +
-                (this.getBlockSeed() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
-                (this.getBlockSeed() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
+                (this.material.ordinal() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
+                (this.material.ordinal() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
         return  random.nextFloat() < this.chance;
     }
-    
-    /** @return Constant block-based number for random seeds only. */
-    protected abstract int getBlockSeed();
 
     /** Attempts to grow this plant. */
     public abstract void grow(World world, int x, int z);

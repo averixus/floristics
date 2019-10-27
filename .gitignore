@@ -3,4 +3,5 @@ bin/
 .settings
 .project
 .classpath
-Floristics.jar
+*.jar
+*.zip

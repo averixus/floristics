@@ -18,23 +18,14 @@ public class TreeGrower extends PlantGrower {
     
     /** Type of tree to grow. */
     protected final TreeType tree;
-    /** Material to use for density and distribution seeds. */
-    protected final Material seedBlock;
     /** Empty radius required to grow. */
     protected final int radius;
 
-    public TreeGrower(TreeType tree, Material seedBlock, int radius, SurfaceType surface, double chance) {
+    public TreeGrower(TreeType tree, Material material, int radius, SurfaceType surface, double chance) {
 
-        super(surface, chance);
+        super(material, surface, chance);
         this.tree = tree;
-        this.seedBlock = seedBlock;
         this.radius = radius;
-    }
-
-    @Override
-    protected int getBlockSeed() {
-
-        return this.seedBlock.ordinal();
     }
 
     @Override
@@ -61,7 +52,8 @@ public class TreeGrower extends PlantGrower {
             surfaceMaterial = surfaceBlock.getType();
         }
         
-        if (!this.surface.isValid(surfaceBlock.getType())) {
+        if (!this.surface.isValid(surfaceBlock.getType()) ||
+                !Floristics.hasPermission(placeBlock.getLocation())) {
             
             return;
         }

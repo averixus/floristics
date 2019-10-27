@@ -1,4 +1,46 @@
-delay: 1
-worlds:
+delay: 1 # Number of ticks between growth cycles
+worlds: # List of worlds growth should happen in
 - world
 - world_the_end
+plants: # Whether each plant should grow
+    GRASS: true # Single-height grass
+    TALL_GRASS: true # Double-height grass
+    FERN: true # Single-height fern
+    LARGE_FERN: true # Double-height fern
+    ALLIUM: true # Allium flower
+    OXEYE_DAISY: true # Oxeye daisy flower
+    POPPY: true # Poppy flower
+    DANDELION: true # Dandelion flower
+    LILY_OF_THE_VALLEY: true # Lily of the valley flower
+    CORNFLOWER: true # Cornflower blue flower
+    BLUE_ORCHID: true # Blue orchid flower
+    ORANGE_TULIP: true # Orange tulip flower
+    RED_TULIP: true # Red tulip flower
+    WHITE_TULIP: true # White tulip flower
+    PINK_TULIP: true # Pink tulip flower
+    AZURE_BLUET: true # Azure bluet flower
+    SUNFLOWER: true # Sunflower double flower
+    LILAC: true # Lilac double flower
+    PEONY: true # Peony double flower
+    ROSE_BUSH: true # Rose double flower
+    DEAD_BUSH: true # Dead bush
+    CACTUS: true # Cactus
+    SUGAR_CANE: true # Sugarcane
+    BAMBOO: true # Bamboo
+    SWEET_BERRY_BUSH: true # Sweet berry bush
+    BROWN_MUSHROOM: true # Small brown mushroom
+    BROWN_MUSHROOM_BLOCK: true # Giant brown mushroom
+    RED_MUSHROOM: true # Small red mushroom
+    RED_MUSHROOM_BLOCK: true # Giant red mushroom
+    OAK_LOG: true # Oak tree
+    BIRCH_LOG: true # Birch tree
+    JUNGLE_LOG: true # Jungle tree
+    COCOA: true # Jungle tree with cocoa beans
+    SPRUCE_LOG: true # Spruce tree
+    DARK_OAK_LOG: true # Dark oack tree
+    ACACIA_LOG: true # Acacia tree
+    LILY_PAD: true # Lily pad
+    SEAGRASS: true # Single-height seagrass
+    TALL_SEAGRASS: true # Double-height seagrass
+    KELP: true # Kelp
+    CHORUS_PLANT: true # Chorus tree

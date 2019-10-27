@@ -8,15 +8,30 @@ The distribution of plants is chunk-based using the world seed and biome, meanin
 
 ### Configuration
 
-Currently the configuration is very simple. The config file has two options:
+The config file has the following options:
 * `delay` - the number of ticks between growth cycles. Increase this number to make plants grow more slowly. Default is `1`.
 * `worlds` - list of worlds growth will occur in. Default is `world` and `world_the_end`.
+* `plants` - section defining whether every plant type can grow, all defaulting to `true`. Plants are listed using the Bukkit material name of an associated block, for example `OAK_LOG` for oak trees.
 
-### GriefPrevention
+The full default config file with comments is [here](https://github.com/JayAvery/floristics/blob/master/config.yml).
 
-Floristics is compatible with GriefPrevention. By default, growth does not occur in claims. This can be adjusted by the player who owns the claim by using the command `/floristics` (or `/flo`):
-* `/floristics growth` - displays whether growth is currently enabled in the claim you're standing in.
-* `/floristics growth <enable|disable>` - enables or disables growth in the claim you're standing in.
+### Compatibility
+
+Floristics is compatible with some world protection plugins.
+
+##### GriefPrevention
+
+By default, growth does not occur in claims. This can be adjusted by the player who owns the claim by using the command `/floristics` (or `/flo`):
+* `/floristics gp` - displays whether growth is currently enabled in the claim you're standing in.
+* `/floristics gp <enable|disable>` - enables or disables growth in the claim you're standing in.
+
+##### WorldGuard
+
+There is a custom `floristics` region flag, which defaults to `deny`. If the flag is set to `allow`, growth will occur in the region.
+
+##### RedProtect
+
+There is a custom `floristics` region flag, which defaults to `false`. If the flag is set to `true`, growth will occur in the region.
 
 ### More information
 * Floristics is Copyright (C) 2019 Jay Avery. It was originally inspired by [Botany](https://dev.bukkit.org/projects/botany), Copyright (C) 2014 Auke Kok.

@@ -13,257 +13,266 @@ import land.jay.floristics.PlantGrower.SurfaceType;
 public enum BiomeGrower {
     
     PLAINS {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
-        this.plants.add(new BushGrower(Material.TALL_GRASS, false, 0.1, SurfaceType.DIRT, 1));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.AZURE_BLUET, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.ORANGE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.PINK_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.RED_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.WHITE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.OXEYE_DAISY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.CORNFLOWER, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
+        this.add(new BushGrower(Material.TALL_GRASS, false, 0.1, SurfaceType.DIRT, 1));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.AZURE_BLUET, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.ORANGE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.PINK_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.RED_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.WHITE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.OXEYE_DAISY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.CORNFLOWER, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     SUNFLOWER_PLAINS {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
-        this.plants.add(new BushGrower(Material.TALL_GRASS, false, 0.1, SurfaceType.DIRT, 1));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.AZURE_BLUET, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.ORANGE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.PINK_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.RED_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.WHITE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.OXEYE_DAISY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.CORNFLOWER, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05)); 
-        this.plants.add(new BushGrower(Material.SUNFLOWER, false, 0.1, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
+        this.add(new BushGrower(Material.TALL_GRASS, false, 0.1, SurfaceType.DIRT, 1));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.AZURE_BLUET, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.ORANGE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.PINK_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.RED_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.WHITE_TULIP, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.OXEYE_DAISY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.CORNFLOWER, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new SugarcaneGrower(0.4, 0.05)); 
+        this.add(new BushGrower(Material.SUNFLOWER, false, 0.1, SurfaceType.DIRT, 0.2));
     }},
     COOL_OCEAN {{
-        this.plants.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
-        this.plants.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));
-        this.plants.add(new BushGrower(Material.KELP, true, 0.15, SurfaceType.SEAWEED, 0.1));
+        this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
+        this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));
+        this.add(new BushGrower(Material.KELP, true, 0.15, SurfaceType.SEAWEED, 0.1));
     }},
     WARM_OCEAN {{
-        this.plants.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
-        this.plants.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
+        this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
+        this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
     }},
     DESERT {{
-        this.plants.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
-        this.plants.add(new CactusGrower(0.02, 0.1));
-        this.plants.add(new SugarcaneGrower(0.4, 0.25));
+        this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
+        this.add(new CactusGrower(0.02, 0.1));
+        this.add(new SugarcaneGrower(0.4, 0.25));
     }},
     MOUNTAINS {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.13));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.13));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.05));
     }},
     WOODED_MOUNTAINS {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.13));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.2));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.2));
-        this.plants.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.2));    
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.13));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.2));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.2));
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.2));    
     }},
     FOREST {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG,  5, SurfaceType.DIRT, 0.95));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.1));
-        this.plants.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG,  5, SurfaceType.DIRT, 0.95));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.1));
+        this.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     TAIGA {{
-        this.plants.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.95));
-        this.plants.add(new BushGrower(Material.FERN, false, 0.15, SurfaceType.DIRT, 0.15));
-        this.plants.add(new BushGrower(Material.LARGE_FERN, false, 0.05, SurfaceType.DIRT, 0.15));
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.05, SurfaceType.DIRT, 0.1));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.SWEET_BERRY_BUSH, false, 0.02, SurfaceType.DIRT, 0.08));
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new BushGrower(Material.FERN, false, 0.15, SurfaceType.DIRT, 0.15));
+        this.add(new BushGrower(Material.LARGE_FERN, false, 0.05, SurfaceType.DIRT, 0.15));
+        this.add(new BushGrower(Material.GRASS, false, 0.05, SurfaceType.DIRT, 0.1));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.SWEET_BERRY_BUSH, false, 0.02, SurfaceType.DIRT, 0.08));
         
     }},
     SNOWY_TAIGA {{
-        this.plants.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.95));
-        this.plants.add(new BushGrower(Material.FERN, false, 0.1, SurfaceType.DIRT, 0.05));
-        this.plants.add(new BushGrower(Material.LARGE_FERN, false, 0.02, SurfaceType.DIRT, 0.05));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.005));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.005));
-        this.plants.add(new BushGrower(Material.SWEET_BERRY_BUSH, false, 0.02, SurfaceType.DIRT, 0.03));
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new BushGrower(Material.FERN, false, 0.1, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.LARGE_FERN, false, 0.02, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.005));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.005));
+        this.add(new BushGrower(Material.SWEET_BERRY_BUSH, false, 0.02, SurfaceType.DIRT, 0.03));
     }},
     MEGA_TAIGA {{
-        this.plants.add(new TreeGrower(TreeType.MEGA_REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.95));
-        this.plants.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.4));
-        this.plants.add(new BushGrower(Material.FERN, false, 0.15, SurfaceType.DIRT, 0.15));
-        this.plants.add(new BushGrower(Material.LARGE_FERN, false, 0.05, SurfaceType.DIRT, 0.15));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
-        this.plants.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new TreeGrower(TreeType.MEGA_REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.95));
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.4));
+        this.add(new BushGrower(Material.FERN, false, 0.15, SurfaceType.DIRT, 0.15));
+        this.add(new BushGrower(Material.LARGE_FERN, false, 0.05, SurfaceType.DIRT, 0.15));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
     }},
     SWAMP {{
-        this.plants.add(new TreeGrower(TreeType.SWAMP, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.5));
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.2, SurfaceType.DIRT, 0.5));
-        this.plants.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.001));
-        this.plants.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.001));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
-        this.plants.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
-        this.plants.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
-        this.plants.add(new BushGrower(Material.BLUE_ORCHID, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.LILY_PAD, false, 0.02, SurfaceType.WATER, 0.01));
-        this.plants.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
-        this.plants.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new TreeGrower(TreeType.SWAMP, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.5));
+        this.add(new BushGrower(Material.GRASS, false, 0.2, SurfaceType.DIRT, 0.5));
+        this.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.001));
+        this.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.001));
+        this.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
+        this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
+        this.add(new BushGrower(Material.BLUE_ORCHID, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.LILY_PAD, false, 0.02, SurfaceType.WATER, 0.01));
+        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
     }},
     RIVER {{
-        this.plants.add(new SugarcaneGrower(0.4, 0.005));
-        this.plants.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
-        this.plants.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
+        this.add(new SugarcaneGrower(0.4, 0.005));
+        this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
+        this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
     }},
     END {{
-        this.plants.add(new TreeGrower(TreeType.CHORUS_PLANT, Material.CHORUS_PLANT, 7, SurfaceType.END, 0.5)); 
+        this.add(new TreeGrower(TreeType.CHORUS_PLANT, Material.CHORUS_PLANT, 7, SurfaceType.END, 0.5)); 
     }},
     TUNDRA {{
-        this.plants.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.05, SurfaceType.DIRT, 0.05));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.05, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
     }},
     MUSHROOM {{
-        this.plants.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.15));
-        this.plants.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.15));
-        this.plants.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.1));
-        this.plants.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.1));
+        this.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.15));
+        this.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.15));
+        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.1));
+        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.1));
     }},
     JUNGLE {{
-        this.plants.add(new TreeGrower(TreeType.JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 1));
-        this.plants.add(new TreeGrower(TreeType.SMALL_JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 1));
-        this.plants.add(new TreeGrower(TreeType.JUNGLE_BUSH, Material.JUNGLE_LOG, 5, SurfaceType.DIRT, 1));
-        this.plants.add(new TreeGrower(TreeType.COCOA_TREE, Material.COCOA, 5, SurfaceType.DIRT, 0.005));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.1));
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.BAMBOO, false, 0.001, SurfaceType.DIRT, 0.001));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new TreeGrower(TreeType.JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 1));
+        this.add(new TreeGrower(TreeType.SMALL_JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 1));
+        this.add(new TreeGrower(TreeType.JUNGLE_BUSH, Material.JUNGLE_LOG, 5, SurfaceType.DIRT, 1));
+        this.add(new TreeGrower(TreeType.COCOA_TREE, Material.COCOA, 5, SurfaceType.DIRT, 0.005));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.1));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.BAMBOO, false, 0.001, SurfaceType.DIRT, 0.001));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     JUNGLE_EDGE {{
-        this.plants.add(new TreeGrower(TreeType.SMALL_JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 0.2));
-        this.plants.add(new TreeGrower(TreeType.COCOA_TREE, Material.COCOA, 5, SurfaceType.DIRT, 0.005));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new TreeGrower(TreeType.SMALL_JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 0.2));
+        this.add(new TreeGrower(TreeType.COCOA_TREE, Material.COCOA, 5, SurfaceType.DIRT, 0.005));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     BAMBOO_JUNGLE {{
-        this.plants.add(new TreeGrower(TreeType.JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 0.5));
-        this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.BAMBOO, false, 0.2, SurfaceType.DIRT, 0.6));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new TreeGrower(TreeType.JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 0.5));
+        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.BAMBOO, false, 0.2, SurfaceType.DIRT, 0.6));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     SAVANNA {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
-        this.plants.add(new BushGrower(Material.TALL_GRASS, false, 0.1, SurfaceType.DIRT, 1));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.05, SurfaceType.DIRT, 0.05));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.05, SurfaceType.DIRT, 0.05));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
-        this.plants.add(new TreeGrower(TreeType.ACACIA, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.15));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
+        this.add(new BushGrower(Material.TALL_GRASS, false, 0.1, SurfaceType.DIRT, 1));
+        this.add(new BushGrower(Material.DANDELION, false, 0.05, SurfaceType.DIRT, 0.05));
+        this.add(new BushGrower(Material.POPPY, false, 0.05, SurfaceType.DIRT, 0.05));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new TreeGrower(TreeType.ACACIA, Material.ACACIA_LOG, 7, SurfaceType.DIRT, 0.15));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     BADLANDS {{
-        this.plants.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
-        this.plants.add(new CactusGrower(0.02, 0.1));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
+        this.add(new CactusGrower(0.02, 0.1));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     WOODED_BADLANDS {{
-        this.plants.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
-        this.plants.add(new CactusGrower(0.02, 0.1));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.9));
+        this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
+        this.add(new CactusGrower(0.02, 0.1));
+        this.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.9));
     }},
     DARK_FOREST {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.DARK_OAK, Material.DARK_OAK_LOG, 5, SurfaceType.DIRT, 1));
-        this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.5));
-        this.plants.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 5, SurfaceType.FUNGI, 0.15));
-        this.plants.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 5, SurfaceType.FUNGI, 0.5));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.DARK_OAK, Material.DARK_OAK_LOG, 5, SurfaceType.DIRT, 1));
+        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.5));
+        this.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 5, SurfaceType.FUNGI, 0.15));
+        this.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 5, SurfaceType.FUNGI, 0.5));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     FLOWER_FOREST {{
-       this.plants.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.95));
-       this.plants.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.3));
-       this.plants.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 7, SurfaceType.DIRT, 0.95));
-       this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-       this.plants.add(new BushGrower(Material.POPPY, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.DANDELION, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.ALLIUM, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.AZURE_BLUET, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.ORANGE_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.PINK_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.RED_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.WHITE_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.OXEYE_DAISY, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.CORNFLOWER, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.LILAC, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.ROSE_BUSH, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new BushGrower(Material.PEONY, false, 0.15, SurfaceType.DIRT, 0.1));
-       this.plants.add(new SugarcaneGrower(0.4, 0.05)); 
+       this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.95));
+       this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.3));
+       this.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 7, SurfaceType.DIRT, 0.95));
+       this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+       this.add(new BushGrower(Material.POPPY, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.DANDELION, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.ALLIUM, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.AZURE_BLUET, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.ORANGE_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.PINK_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.RED_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.WHITE_TULIP, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.OXEYE_DAISY, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.CORNFLOWER, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.LILAC, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.ROSE_BUSH, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new BushGrower(Material.PEONY, false, 0.15, SurfaceType.DIRT, 0.1));
+       this.add(new SugarcaneGrower(0.4, 0.05)); 
     }},
     BIRCH_FOREST {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05));
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     TALL_BIRCH {{
-        this.plants.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
-        this.plants.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.plants.add(new TreeGrower(TreeType.TALL_BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
-        this.plants.add(new SugarcaneGrower(0.4, 0.05)); 
+        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
+        this.add(new BushGrower(Material.LILAC, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.ROSE_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.PEONY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new TreeGrower(TreeType.TALL_BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new SugarcaneGrower(0.4, 0.05)); 
     }},
     BEACH {{
-       this.plants.add(new SugarcaneGrower(0.4, 0.05)); 
+       this.add(new SugarcaneGrower(0.4, 0.05)); 
     }},
     BARREN;
     
     /** List of possible plants to grow in this biome. */
     protected List<PlantGrower> plants = Lists.newArrayList();
+    
+    /** Attempts to add this plant grower if it is enabled by config. */
+    protected void add(PlantGrower grower) {
+        
+        if (Floristics.isEnabled(grower.material)) {
+            
+            this.plants.add(grower);
+        }
+    }
     
     /** Attempts to grow a random plant for this biome. */
     public void growSomething(World world, int x, int z) {
