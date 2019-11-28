@@ -44,10 +44,7 @@ public class BushGrower extends PlantGrower {
     
     @Override
     public void grow(World world,  int x, int z) {
-
-        if (this.isPresent(world, x, z) &&
-                (this.checkDensity(world, x, z) < this.getLocalDensity(world, x, z))) {
-
+        if (this.isPresent(world, x, z) && (this.calcDensity(world, x, z) < this.getLocalDensity(world, x, z))) {
             this.placeBush(world, x, z);
         }
     }
@@ -65,22 +62,18 @@ public class BushGrower extends PlantGrower {
     
     /** @return Whether to keep searching down past this material. */
     protected boolean searchDown(Material checkMaterial) {
-        
         return this.isWater ? SEARCH_DOWN_WATER.contains(checkMaterial) :
             SEARCH_DOWN_AIR.contains(checkMaterial);
     }
     
     /** @return Whether this material is a valid space for the bush. */
     protected boolean isSpace(Material checkMaterial) {
-        
         return this.isWater ? checkMaterial == Material.WATER : checkMaterial == Material.AIR;
     }
     
     /** Attempts to place this bush at the location. */
     protected void placeBush(World world, int x, int z) {
-
         if (this.search(world, world.getBiome(x, z), x, z) != SearchResult.VALID) {
-            
             return;
         }
         
@@ -88,7 +81,6 @@ public class BushGrower extends PlantGrower {
         Material surfaceMaterial = surfaceBlock.getType();
         
         while (this.searchDown(surfaceMaterial)) {
-            
             surfaceBlock = surfaceBlock.getRelative(BlockFace.DOWN);
             surfaceMaterial = surfaceBlock.getType();
         }
@@ -96,12 +88,8 @@ public class BushGrower extends PlantGrower {
         Block spaceBlock = surfaceBlock.getRelative(BlockFace.UP);
         
         if (this.isDouble) {
-            
             Block topBlock = spaceBlock.getRelative(BlockFace.UP);
-            
-            if (Floristics.hasPermission(spaceBlock.getLocation()) &&
-                    Floristics.hasPermission(topBlock.getLocation())) {
-            
+            if (Floristics.hasPermission(spaceBlock.getLocation()) && Floristics.hasPermission(topBlock.getLocation())) {
                 spaceBlock.setType(this.material, false);
                 topBlock.setType(this.material, false);
                 Bisected spaceData = (Bisected) spaceBlock.getBlockData();
@@ -111,11 +99,8 @@ public class BushGrower extends PlantGrower {
                 spaceBlock.setBlockData(spaceData);
                 topBlock.setBlockData(topData);
             }
-            
         } else {
-
             if (Floristics.hasPermission(spaceBlock.getLocation())) {
-            
                 spaceBlock.setType(this.material, false);
             }
         }
@@ -124,9 +109,7 @@ public class BushGrower extends PlantGrower {
     /** @return The state of the location for this bush. */
     protected SearchResult search(World world, Biome biome, int searchX, int searchZ) {
 
-        // Don't search other biomes
         if (biome != world.getBiome(searchX, searchZ)) {
-            
             return SearchResult.INVALID;
         }
         
@@ -134,31 +117,26 @@ public class BushGrower extends PlantGrower {
         Material surfaceMaterial = surfaceBlock.getType();
         
         while (this.searchDown(surfaceMaterial)) {
-            
             surfaceBlock = surfaceBlock.getRelative(BlockFace.DOWN);
             surfaceMaterial = surfaceBlock.getType();
         }
         
         if (surfaceMaterial == this.material) {
-            
             return SearchResult.PRESENT;
         }
         
         if (this.surface.isValid(surfaceMaterial)) {
-            
             Block spaceBlock = surfaceBlock.getRelative(BlockFace.UP);
             Material spaceMaterial = spaceBlock.getType();
             boolean hasSpace = this.isSpace(spaceMaterial);
             
             if (this.isDouble) {
-                
                 Block topBlock = spaceBlock.getRelative(BlockFace.UP);
                 Material topMaterial = topBlock.getType();
                 hasSpace = hasSpace && (this.isSpace(topMaterial));
             }
             
             if (hasSpace) {
-                
                 return SearchResult.VALID;
             }
         }
@@ -167,19 +145,17 @@ public class BushGrower extends PlantGrower {
     }
     
     /** @return The density of this plant in the radius. */
-    protected double checkDensity(World world, int x, int z) {
+    protected double calcDensity(World world, int x, int z) {
 
         double validCount = 0;
         double foundCount = 0;
         
         for (int xCheck = x - this.radius; xCheck < x + this.radius; xCheck++) {
-            
             for (int zCheck = z - this.radius; zCheck < z + this.radius; zCheck++) {
  
                 SearchResult result = this.search(world, world.getBiome(x, z), xCheck, zCheck);
                 
                 switch (result) {
-                    
                     case PRESENT:
                         foundCount++;
                         validCount++;

@@ -276,16 +276,13 @@ public enum BiomeGrower {
     
     /** Attempts to grow a random plant for this biome. */
     public void growSomething(World world, int x, int z) {
-        
         if (!this.plants.isEmpty()) {
-
             this.plants.get(Floristics.RAND.nextInt(this.plants.size())).grow(world, x, z);
         }
     }
     
     /** Handles growth at the given location. */
     public static void handleGrowth(World world, int x, int z) {
-        
         get(world.getBiome(x, z)).growSomething(world, x, z);
     }
     

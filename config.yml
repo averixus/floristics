@@ -1,3 +1,4 @@
+config-version: 2 # Do not edit! Used for internal checks 
 delay: 1 # Number of ticks between growth cycles
 worlds: # List of worlds growth should happen in
 - world
@@ -37,7 +38,7 @@ plants: # Whether each plant should grow
     JUNGLE_LOG: true # Jungle tree
     COCOA: true # Jungle tree with cocoa beans
     SPRUCE_LOG: true # Spruce tree
-    DARK_OAK_LOG: true # Dark oack tree
+    DARK_OAK_LOG: true # Dark oak tree
     ACACIA_LOG: true # Acacia tree
     LILY_PAD: true # Lily pad
     SEAGRASS: true # Single-height seagrass

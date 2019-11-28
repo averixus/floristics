@@ -9,6 +9,7 @@ The distribution of plants is chunk-based using the world seed and biome, meanin
 ### Configuration
 
 The config file has the following options:
+* `config-version` - used internally to check for updates to the config file. Do not edit!
 * `delay` - the number of ticks between growth cycles. Increase this number to make plants grow more slowly. Default is `1`.
 * `worlds` - list of worlds growth will occur in. Default is `world` and `world_the_end`.
 * `plants` - section defining whether every plant type can grow, all defaulting to `true`. Plants are listed using the Bukkit material name of an associated block, for example `OAK_LOG` for oak trees.

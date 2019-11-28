@@ -21,12 +21,10 @@ public class CactusGrower extends BushGrower {
         SearchResult result = super.search(world, biome, searchX, searchZ);
 
         if (result == SearchResult.VALID) {
-            
             Block base = world.getHighestBlockAt(searchX, searchZ);
             Material baseMaterial = base.getType();
             
             while (this.searchDown(baseMaterial)) {
-                
                 base = base.getRelative(BlockFace.DOWN);
                 baseMaterial = base.getType();
             }
@@ -43,7 +41,6 @@ public class CactusGrower extends BushGrower {
                     this.isSpace(space.getRelative(BlockFace.WEST).getType());
             
             if (!isDry || !hasSpace) {
-                
                 return SearchResult.INVALID;
             }
         }
