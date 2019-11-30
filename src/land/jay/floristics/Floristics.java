@@ -121,7 +121,7 @@ public class Floristics extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
         if (hasGp) {
-            if (args[0].equals("gp")) {
+            if (args.length > 0 && args[0].equals("gp")) {
                 GriefPreventionWrapper.handleCommand(sender, args);
             } else {
                 sender.sendMessage("Use /floristics gp [enable|disable] for GriefPrevention permissions.");
