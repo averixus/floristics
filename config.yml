@@ -47,3 +47,5 @@ plants: # Whether each plant should grow
     TALL_SEAGRASS: true # Double-height seagrass
     KELP: true # Kelp
     CHORUS_PLANT: true # Chorus tree
+    PUMPKIN: true # Pumpkin
+    MELON: true # Melon
