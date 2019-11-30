@@ -25,10 +25,12 @@ public class Floristics extends JavaPlugin {
     public static final Random RAND = new Random();
     
     /** Track the current config file version. */
-    private static final int CONFIG_VERSION = 2;
+    private static final int CONFIG_VERSION = 3;
     
     /** Config ticks between growth cycles. */
     private static int delay = 1;
+    /** Config growth attempts per cycle. */
+    private static int growths = 1;
     /** Config worlds to grow in. */
     private static Set<String> worlds = Sets.newHashSet();
     /** Config plants to grow. */
@@ -56,6 +58,7 @@ public class Floristics extends JavaPlugin {
         this.saveDefaultConfig();
         
         delay = this.getConfig().getInt("delay");
+        growths = this.getConfig().getInt("growths");
         worlds.addAll(this.getConfig().getStringList("worlds"));
         ConfigurationSection section = this.getConfig().getConfigurationSection("plants");
         for (String key : section.getKeys(false)) {
@@ -88,11 +91,13 @@ public class Floristics extends JavaPlugin {
         
         for (World world : Bukkit.getWorlds()) {
             if (worlds.contains(world.getName())) {
-                Chunk[] chunks = world.getLoadedChunks();
-                Chunk chunk = chunks[RAND.nextInt(chunks.length)];
-                int x = (chunk.getX() * 16) + RAND.nextInt(16);
-                int z = (chunk.getZ() * 16) + RAND.nextInt(16);
-                BiomeGrower.handleGrowth(world, x, z);
+                for (int i = 0; i < growths; i++) {
+                    Chunk[] chunks = world.getLoadedChunks();
+                    Chunk chunk = chunks[RAND.nextInt(chunks.length)];
+                    int x = (chunk.getX() * 16) + RAND.nextInt(16);
+                    int z = (chunk.getZ() * 16) + RAND.nextInt(16);
+                    BiomeGrower.handleGrowth(world, x, z);
+                }
             }
         }
     }

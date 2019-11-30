@@ -1,6 +1,6 @@
 name: Floristics
 main: land.jay.floristics.Floristics
-version: 2.2
+version: 2.3
 api-version: 1.14
 softdepend: [GriefPrevention, WorldGuard, RedProtect]
 commands:

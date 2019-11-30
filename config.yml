@@ -1,5 +1,6 @@
-config-version: 2 # Do not edit! Used for internal checks 
+config-version: 3 # Do not edit! Used for internal checks 
 delay: 1 # Number of ticks between growth cycles
+growths: 1 # Number of growth attempts per cycle
 worlds: # List of worlds growth should happen in
 - world
 - world_the_end
