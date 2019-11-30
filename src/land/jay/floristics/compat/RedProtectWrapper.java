@@ -17,6 +17,6 @@ public class RedProtectWrapper {
     public static boolean canGrow(Location location) {
         
         Region region = RedProtect.get().getAPI().getRegion(location);        
-        return region != null && region.getFlagBool("floristics");
+        return region == null || region.getFlagBool("floristics");
     }
 }

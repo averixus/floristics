@@ -86,7 +86,7 @@ public class Floristics extends JavaPlugin {
                 () -> this.growCycle(), delay, delay);
     }
     
-    /** Attempts growth in one chunk per enabled world. */
+    /** Attempts growth in each enabled world. */
     private void growCycle() {
         
         for (World world : Bukkit.getWorlds()) {

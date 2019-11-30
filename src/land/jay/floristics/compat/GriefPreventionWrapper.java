@@ -96,16 +96,16 @@ public class GriefPreventionWrapper {
                 enabledClaims.remove(id);
                 player.sendMessage("Growth disabled in this claim.");
             }
+            claimsConfig.set("gp", Lists.newArrayList(enabledClaims));
+            
+            try {
+                claimsConfig.save(claimsFile);
+            } catch (IOException ex) {
+                Floristics.error("Error saving gp.yml!", ex);
+            }
+            
         } else {
             player.sendMessage("Growth in this claim is currently " + (enabledClaims.contains(id) ? "enabled." : "disabled."));
-        }
-
-        claimsConfig.set("gp", Lists.newArrayList(enabledClaims));
-        
-        try {
-            claimsConfig.save(claimsFile);
-        } catch (IOException ex) {
-            Floristics.error("Error saving gp.yml!", ex);
         }
     }
 }
