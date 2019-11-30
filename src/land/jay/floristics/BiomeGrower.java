@@ -260,6 +260,10 @@ public enum BiomeGrower {
     BEACH {{
        this.add(new SugarcaneGrower(0.4, 0.05)); 
     }},
+    NETHER {{
+        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01)); 
+    }},
     BARREN;
     
     /** List of possible plants to grow in this biome. */
@@ -345,7 +349,9 @@ public enum BiomeGrower {
                 return END;
             case BEACH:
                 return BEACH;
-            case FROZEN_OCEAN: case DEEP_FROZEN_OCEAN: case NETHER: case THE_END: case FROZEN_RIVER: case STONE_SHORE: case SNOWY_BEACH: case SMALL_END_ISLANDS: case END_MIDLANDS: case END_BARRENS: case THE_VOID: case ICE_SPIKES:
+            case NETHER: 
+                return NETHER;
+            case FROZEN_OCEAN: case DEEP_FROZEN_OCEAN: case THE_END: case FROZEN_RIVER: case STONE_SHORE: case SNOWY_BEACH: case SMALL_END_ISLANDS: case END_MIDLANDS: case END_BARRENS: case THE_VOID: case ICE_SPIKES:
             default:
                 return BARREN;
         }

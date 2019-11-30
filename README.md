@@ -12,7 +12,7 @@ The config file has the following options:
 * `config-version` - used internally to check for updates to the config file. Do not edit!
 * `delay` - the number of ticks between growth cycles. Increase this number to make plants grow more slowly. Default is `1`.
 * `growth` - the number of attempts per growth cycle. Increase this number to make plants grow more quickly. Default is `1`.
-* `worlds` - list of worlds growth will occur in. Default is `world` and `world_the_end`.
+* `worlds` - list of worlds growth will occur in. Default is `world`, `world_the_end`, and `world_nether`.
 * `plants` - section defining whether every plant type can grow, all defaulting to `true`. Plants are listed using the Bukkit material name of an associated block, for example `OAK_LOG` for oak trees.
 
 The full default config file with comments is [here](https://github.com/JayAvery/floristics/blob/master/config.yml).

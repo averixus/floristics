@@ -46,7 +46,7 @@ public abstract class PlantGrower {
     protected enum SurfaceType {
         
         DIRT(Material.DIRT, Material.GRASS_BLOCK),
-        FUNGI(Material.DIRT, Material.GRASS_BLOCK, Material.PODZOL, Material.MYCELIUM),
+        FUNGI(Material.DIRT, Material.GRASS_BLOCK, Material.PODZOL, Material.MYCELIUM, Material.NETHERRACK),
         SEAWEED(Material.SAND, Material.DIRT, Material.GRAVEL, Material.CLAY),
         JUNGLE(Material.DIRT, Material.COARSE_DIRT, Material.GRASS_BLOCK, Material.SAND, Material.PODZOL, Material.GRAVEL),
         DEAD(Material.SAND, Material.RED_SAND, Material.PODZOL, Material.DIRT, Material.COARSE_DIRT, Material.TERRACOTTA, Material.BLACK_TERRACOTTA, Material.GRAY_TERRACOTTA, Material.LIGHT_GRAY_TERRACOTTA, Material.WHITE_TERRACOTTA, Material.BLUE_TERRACOTTA, Material.LIGHT_BLUE_TERRACOTTA, Material.CYAN_TERRACOTTA, Material.GREEN_TERRACOTTA, Material.LIME_TERRACOTTA, Material.YELLOW_TERRACOTTA, Material.ORANGE_TERRACOTTA, Material.RED_TERRACOTTA, Material.PINK_TERRACOTTA, Material.MAGENTA_TERRACOTTA, Material.PURPLE_TERRACOTTA, Material.BROWN_TERRACOTTA),
