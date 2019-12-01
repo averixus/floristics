@@ -1,3 +1,4 @@
+/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics.compat;
 
 import java.io.File;

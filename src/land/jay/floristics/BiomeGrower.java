@@ -27,6 +27,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     SUNFLOWER_PLAINS {{
@@ -44,6 +46,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05)); 
         this.add(new BushGrower(Material.SUNFLOWER, false, 0.1, SurfaceType.DIRT, 0.2));
     }},
@@ -51,14 +55,20 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
         this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));
         this.add(new BushGrower(Material.KELP, true, 0.15, SurfaceType.SEAWEED, 0.1));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     WARM_OCEAN {{
         this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
-        this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
+        this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1)); 
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true)); 
     }},
     DESERT {{
         this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
         this.add(new CactusGrower(0.02, 0.1));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.25));
     }},
     MOUNTAINS {{
@@ -69,6 +79,8 @@ public enum BiomeGrower {
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.05));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     WOODED_MOUNTAINS {{
         this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.13));
@@ -77,7 +89,9 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.2));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.2));
-        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.2));    
+        this.add(new TreeGrower(TreeType.REDWOOD, Material.SPRUCE_LOG, 5, SurfaceType.DIRT, 0.2)); 
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));   
     }},
     FOREST {{
         this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
@@ -91,6 +105,8 @@ public enum BiomeGrower {
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG,  5, SurfaceType.DIRT, 0.95));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.1));
         this.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     TAIGA {{
@@ -102,6 +118,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.SWEET_BERRY_BUSH, false, 0.02, SurfaceType.DIRT, 0.08));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         
     }},
     SNOWY_TAIGA {{
@@ -112,6 +130,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.005));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.SWEET_BERRY_BUSH, false, 0.02, SurfaceType.DIRT, 0.03));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     MEGA_TAIGA {{
         this.add(new TreeGrower(TreeType.MEGA_REDWOOD, Material.SPRUCE_LOG, 7, SurfaceType.DIRT, 0.95));
@@ -122,8 +142,10 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DIRT, 0.01));
-        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
-        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.02, 0.01, false));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.02, 0.01, false));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     SWAMP {{
         this.add(new TreeGrower(TreeType.SWAMP, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.5));
@@ -136,13 +158,17 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.BLUE_ORCHID, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.LILY_PAD, false, 0.02, SurfaceType.WATER, 0.01));
-        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
-        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.02, 0.01, false));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.02, 0.01, false));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     RIVER {{
         this.add(new SugarcaneGrower(0.4, 0.005));
         this.add(new BushGrower(Material.SEAGRASS, true, 0.1, SurfaceType.SEAWEED, 0.1));
         this.add(new BushGrower(Material.TALL_SEAGRASS, true, 0.05, SurfaceType.SEAWEED, 0.1));  
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     END {{
         this.add(new TreeGrower(TreeType.CHORUS_PLANT, Material.CHORUS_PLANT, 7, SurfaceType.END, 0.5)); 
@@ -153,12 +179,16 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     MUSHROOM {{
         this.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.15));
         this.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 7, SurfaceType.FUNGI, 0.15));
-        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.1));
-        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.1));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.02, 0.1, false));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.02, 0.1, false));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     JUNGLE {{
         this.add(new TreeGrower(TreeType.JUNGLE, Material.JUNGLE_LOG, 7, SurfaceType.DIRT, 1));
@@ -171,6 +201,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.MELON, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.BAMBOO, false, 0.001, SurfaceType.DIRT, 0.001));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     JUNGLE_EDGE {{
@@ -181,6 +213,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.MELON, false, 0.02, SurfaceType.DIRT, 0.01));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     BAMBOO_JUNGLE {{
@@ -191,6 +225,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.MELON, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.BAMBOO, false, 0.2, SurfaceType.DIRT, 0.6));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     SAVANNA {{
@@ -201,16 +237,22 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.ACACIA, Material.ACACIA_LOG, 7, SurfaceType.DIRT, 0.15));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     BADLANDS {{
         this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
         this.add(new CactusGrower(0.02, 0.1));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     WOODED_BADLANDS {{
         this.add(new BushGrower(Material.DEAD_BUSH, false, 0.02, SurfaceType.DEAD, 0.1));
         this.add(new CactusGrower(0.02, 0.1));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.9));
     }},
@@ -227,6 +269,8 @@ public enum BiomeGrower {
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 5, SurfaceType.DIRT, 0.5));
         this.add(new TreeGrower(TreeType.RED_MUSHROOM, Material.RED_MUSHROOM_BLOCK, 5, SurfaceType.FUNGI, 0.15));
         this.add(new TreeGrower(TreeType.BROWN_MUSHROOM, Material.BROWN_MUSHROOM_BLOCK, 5, SurfaceType.FUNGI, 0.5));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     FLOWER_FOREST {{
@@ -249,6 +293,8 @@ public enum BiomeGrower {
        this.add(new BushGrower(Material.ROSE_BUSH, false, 0.15, SurfaceType.DIRT, 0.1));
        this.add(new BushGrower(Material.PEONY, false, 0.15, SurfaceType.DIRT, 0.1));
        this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
+       this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+       this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
        this.add(new SugarcaneGrower(0.4, 0.05)); 
     }},
     BIRCH_FOREST {{
@@ -261,6 +307,8 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
     }},
     TALL_BIRCH {{
@@ -273,16 +321,23 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.LILY_OF_THE_VALLEY, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TALL_BIRCH, Material.BIRCH_LOG, 5, SurfaceType.DIRT, 0.95));
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05)); 
     }},
     BEACH {{
        this.add(new SugarcaneGrower(0.4, 0.05)); 
+       this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+       this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
     }},
     NETHER {{
-        this.add(new BushGrower(Material.BROWN_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01));
-        this.add(new BushGrower(Material.RED_MUSHROOM, false, 0.02, SurfaceType.FUNGI, 0.01)); 
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.02, 0.01, false));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.02, 0.01, false)); 
     }},
-    BARREN;
+    BARREN {{
+        this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
+        this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));  
+    }};
     
     /** List of possible plants to grow in this biome. */
     protected List<PlantGrower> plants = Lists.newArrayList();
