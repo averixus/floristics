@@ -16,27 +16,22 @@ public class SugarcaneGrower extends BushGrower {
     }
 
     @Override
-    protected SearchResult search(World world, Biome biome, int searchX, int searchZ) {
+    protected int search(World world, Biome biome, int searchX, int searchZ) {
      
-        SearchResult result = super.search(world, biome, searchX, searchZ);
+        int targetY = super.search(world, biome, searchX, searchZ);
 
-        if (result == SearchResult.VALID) {
-            Block base = world.getHighestBlockAt(searchX, searchZ);
-            Material baseMaterial = base.getType();
+        if (targetY > 0) {
             
-            while (this.searchDown(baseMaterial)) {
-                base = base.getRelative(BlockFace.DOWN);
-                baseMaterial = base.getType();
-            }
+            Block base = world.getBlockAt(searchX, targetY - 1, searchZ);
             
             if (base.getRelative(BlockFace.NORTH).getType() != Material.WATER &&
                     base.getRelative(BlockFace.EAST).getType() != Material.WATER &&
                     base.getRelative(BlockFace.SOUTH).getType() != Material.WATER &&
                     base.getRelative(BlockFace.WEST).getType() != Material.WATER) {
-                return SearchResult.INVALID;
+                return INVALID;
             }
         }
         
-        return result;
+        return targetY;
     }
 }

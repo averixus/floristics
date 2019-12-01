@@ -16,20 +16,14 @@ public class CactusGrower extends BushGrower {
     }
 
     @Override
-    protected SearchResult search(World world, Biome biome, int searchX, int searchZ) {
+    protected int search(World world, Biome biome, int searchX, int searchZ) {
         
-        SearchResult result = super.search(world, biome, searchX, searchZ);
+        int targetY = super.search(world, biome, searchX, searchZ);
 
-        if (result == SearchResult.VALID) {
-            Block base = world.getHighestBlockAt(searchX, searchZ);
-            Material baseMaterial = base.getType();
+        if (targetY > 0) {
             
-            while (this.searchDown(baseMaterial)) {
-                base = base.getRelative(BlockFace.DOWN);
-                baseMaterial = base.getType();
-            }
-            
-            Block space = base.getRelative(BlockFace.UP);
+            Block space = world.getBlockAt(searchX, targetY, searchZ);
+            Block base = space.getRelative(BlockFace.DOWN);
             
             boolean isDry = base.getRelative(BlockFace.NORTH).getType() != Material.WATER &&
                     base.getRelative(BlockFace.EAST).getType() != Material.WATER &&
@@ -41,10 +35,10 @@ public class CactusGrower extends BushGrower {
                     this.isSpace(space.getRelative(BlockFace.WEST).getType());
             
             if (!isDry || !hasSpace) {
-                return SearchResult.INVALID;
+                return INVALID;
             }
         }
         
-        return result;
+        return targetY;
     }
 }

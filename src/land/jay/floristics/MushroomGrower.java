@@ -19,25 +19,15 @@ public class MushroomGrower extends BushGrower {
     }
 
     @Override
-    protected SearchResult search(World world, Biome biome, int searchX, int searchZ) {
+    protected int search(World world, Biome biome, int searchX, int searchZ) {
         
-        SearchResult result = super.search(world, biome, searchX, searchZ);
+        int targetY = super.search(world, biome, searchX, searchZ);
         
-        if (result == SearchResult.VALID && this.dark) {
-            
-            Block base = world.getHighestBlockAt(searchX, searchZ);
-            Material baseMaterial = base.getType();
-            
-            while (this.searchDown(baseMaterial)) {
-                base = base.getRelative(BlockFace.DOWN);
-                baseMaterial = base.getType();
-            }
-            
-            if (base.getRelative(BlockFace.UP).getLightLevel() > 12) {
-                return SearchResult.INVALID;
-            }
+        if (targetY > 0 && this.dark &&
+                world.getBlockAt(searchX, targetY, searchZ).getLightLevel() > 12) {
+                return INVALID;
         }
         
-        return result;
+        return targetY;
     }
 }

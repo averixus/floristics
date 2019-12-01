@@ -21,8 +21,10 @@ public class BushGrower extends PlantGrower {
     /** Materials to search down through for water plant locations. */
     protected static final Set<Material> SEARCH_DOWN_WATER = Sets.newHashSet(Material.AIR, Material.WATER, Material.ICE, Material.BLUE_ICE, Material.FROSTED_ICE, Material.PACKED_ICE);
     
-    /** Utility to describe the state of a particular location. */
-    protected enum SearchResult { PRESENT, VALID, INVALID; }
+    /** Constant to define searched y coords where the plant is already present. */
+    protected static final int PRESENT = -1;
+    /** Constant to define searched y coords where the plant is not valid. */
+    protected static final int INVALID = -2;
     
     /** Whether it's a double height bush. */
     protected final boolean isDouble;
@@ -73,19 +75,14 @@ public class BushGrower extends PlantGrower {
     
     /** Attempts to place this bush at the location. */
     protected void placeBush(World world, int x, int z) {
-        if (this.search(world, world.getBiome(x, z), x, z) != SearchResult.VALID) {
+        
+        int targetY = this.search(world, world.getBiome(x, z), x, z);
+        
+        if (targetY < 0) {
             return;
         }
         
-        Block surfaceBlock = world.getHighestBlockAt(x, z);
-        Material surfaceMaterial = surfaceBlock.getType();
-        
-        while (this.searchDown(surfaceMaterial)) {
-            surfaceBlock = surfaceBlock.getRelative(BlockFace.DOWN);
-            surfaceMaterial = surfaceBlock.getType();
-        }
-        
-        Block spaceBlock = surfaceBlock.getRelative(BlockFace.UP);
+        Block spaceBlock = world.getBlockAt(x, targetY, z);
         
         if (this.isDouble) {
             Block topBlock = spaceBlock.getRelative(BlockFace.UP);
@@ -106,11 +103,11 @@ public class BushGrower extends PlantGrower {
         }
     }
         
-    /** @return The state of the location for this bush. */
-    protected SearchResult search(World world, Biome biome, int searchX, int searchZ) {
+    /** @return The target y coordinate for this bush, or -1 if it's present and -2 if invalid. */
+    protected int search(World world, Biome biome, int searchX, int searchZ) {
 
         if (biome != world.getBiome(searchX, searchZ)) {
-            return SearchResult.INVALID;
+            return INVALID;
         }
         
         Block surfaceBlock = world.getHighestBlockAt(searchX, searchZ);
@@ -122,7 +119,7 @@ public class BushGrower extends PlantGrower {
         }
         
         if (surfaceMaterial == this.material) {
-            return SearchResult.PRESENT;
+            return PRESENT;
         }
         
         if (this.surface.isValid(surfaceMaterial)) {
@@ -137,11 +134,11 @@ public class BushGrower extends PlantGrower {
             }
             
             if (hasSpace) {
-                return SearchResult.VALID;
+                return spaceBlock.getZ();
             }
         }
         
-        return SearchResult.INVALID;
+        return INVALID;
     }
     
     /** @return The density of this plant in the radius. */
@@ -153,18 +150,13 @@ public class BushGrower extends PlantGrower {
         for (int xCheck = x - this.radius; xCheck < x + this.radius; xCheck++) {
             for (int zCheck = z - this.radius; zCheck < z + this.radius; zCheck++) {
  
-                SearchResult result = this.search(world, world.getBiome(x, z), xCheck, zCheck);
+                int result = this.search(world, world.getBiome(x, z), xCheck, zCheck);
                 
-                switch (result) {
-                    case PRESENT:
-                        foundCount++;
-                        validCount++;
-                        break;
-                    case VALID:
-                        validCount++;
-                        break;
-                    case INVALID: default:
-                        break;
+                if (result == PRESENT) {
+                    foundCount++;
+                    validCount++;
+                } else if (result > 0) {
+                    validCount++;
                 }
             }
         }
