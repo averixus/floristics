@@ -23,7 +23,7 @@ Floristics is compatible with some world protection plugins.
 
 ##### GriefPrevention
 
-By default, growth does not occur in claims. This can be adjusted by the player who owns the claim by using the command `/floristics` (or `/flo`):
+By default, growth does not occur in claims. This can be adjusted by the player who owns the claim by using the command `/floristics gp` (or `/flo gp`):
 * `/floristics gp` - displays whether growth is currently enabled in the claim you're standing in.
 * `/floristics gp <enable|disable>` - enables or disables growth in the claim you're standing in.
 
@@ -34,6 +34,12 @@ There is a custom `floristics` region flag, which defaults to `deny`. If the fla
 ##### RedProtect
 
 There is a custom `floristics` region flag, which defaults to `false`. If the flag is set to `true`, growth will occur in the region.
+
+##### Towny
+
+By default, growth does not occur in Towns. This can be adjusted by the mayor by using the command `/floristics towny` (or `/flo towny`):
+* `floristics towny` - displays whether growth is currently enabled in the Town you're standing in.
+* `floristics towny <enable|disable>` - enables or disables growth in the Town you're standing in.
 
 ### More information
 * Floristics is Copyright (C) 2019 Jay Avery. It was originally inspired by [Botany](https://dev.bukkit.org/projects/botany), Copyright (C) 2014 Auke Kok.
