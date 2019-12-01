@@ -96,9 +96,9 @@ public class Floristics extends JavaPlugin {
         
         for (World world : Bukkit.getWorlds()) {
             if (worlds.contains(world.getName())) {
-                for (int i = 0; i < growths; i++) {
-                    Chunk[] chunks = world.getLoadedChunks();
-                    if (chunks.length > 0) {
+                Chunk[] chunks = world.getLoadedChunks();
+                if (chunks.length > 0) {
+                    for (int i = 0; i < growths; i++) {
                         Chunk chunk = chunks[RAND.nextInt(chunks.length)];
                         int x = (chunk.getX() * 16) + RAND.nextInt(16);
                         int z = (chunk.getZ() * 16) + RAND.nextInt(16);
