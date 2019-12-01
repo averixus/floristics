@@ -17,6 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.google.common.collect.Sets;
 import land.jay.floristics.compat.GriefPreventionWrapper;
 import land.jay.floristics.compat.RedProtectWrapper;
+import land.jay.floristics.compat.TownyWrapper;
 import land.jay.floristics.compat.WorldGuardWrapper;
 
 public class Floristics extends JavaPlugin {
@@ -25,7 +26,7 @@ public class Floristics extends JavaPlugin {
     public static final Random RAND = new Random();
     
     /** Track the current config file version. */
-    private static final int CONFIG_VERSION = 3;
+    private static final int CONFIG_VERSION = 4;
     
     /** Config ticks between growth cycles. */
     private static int delay = 1;
@@ -42,6 +43,8 @@ public class Floristics extends JavaPlugin {
     private static boolean hasWg = false;
     /** Whether RedProtect is present. */
     private static boolean hasRp = false;
+    /** Whether Towny is present. */
+    private static boolean hasTy = false;
 
     @Override
     public void onLoad() {
@@ -70,8 +73,10 @@ public class Floristics extends JavaPlugin {
         hasGp = Bukkit.getPluginManager().getPlugin("GriefPrevention") != null;
         hasWg = Bukkit.getPluginManager().getPlugin("WorldGuard") != null;
         hasRp = Bukkit.getPluginManager().getPlugin("RedProtect") != null;
+        hasTy = Bukkit.getPluginManager().getPlugin("Towny") != null;
         
         if (hasWg) { WorldGuardWrapper.onLoad(); }
+        if (hasTy) { TownyWrapper.onLoad(); }
     }
     
     @Override
@@ -116,21 +121,41 @@ public class Floristics extends JavaPlugin {
         result = hasGp ? result && GriefPreventionWrapper.canGrow(location) : result;
         result = hasWg ? result && WorldGuardWrapper.canGrow(location) : result;            
         result = hasRp ? result && RedProtectWrapper.canGrow(location) : result;
+        result = hasTy ? result && TownyWrapper.canGrow(location) : result;
         return result;
     }
     
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
-        if (hasGp) {
-            if (args.length > 0 && args[0].equals("gp")) {
+        if (!hasGp && !hasTy) {
+            sender.sendMessage("This command is only for use with GriefPrevention or Towny.");
+            return true;
+        }
+        
+        if (args.length > 0 && args[0].equals("gp")) {
+            if (hasGp) {
                 GriefPreventionWrapper.handleCommand(sender, args);
             } else {
-                sender.sendMessage("Use /floristics gp [enable|disable] for GriefPrevention permissions.");
+                sender.sendMessage("This command is only for use with GriefPrevention.");
+            }
+        } else if (args.length > 0 && args[0].equals("towny")) {
+            if (hasTy) {
+                TownyWrapper.handleCommand(sender, args);
+            } else {
+                sender.sendMessage("This command is only for use with Towny.");
             }
         } else {
-            sender.sendMessage("This command is only for use with GriefPrevention.");
+            if (hasGp && hasTy) {
+                sender.sendMessage("Use /floristics gp [enable|disable] for GriefPrevention permissions.\n" +
+                        "or /floristics towny [enable|disable] for Towny permissions.");
+            } else if (hasGp) {
+                sender.sendMessage("Use /floristics gp [enable|disable] for GriefPrevention permissions.");
+            } else if (hasTy) {
+                sender.sendMessage("Use /floristics towny [enable|disable] for Towny permissions.");
+            }
         }
+        
         return true;
     }
     
