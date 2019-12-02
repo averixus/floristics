@@ -134,7 +134,7 @@ public class BushGrower extends PlantGrower {
             }
             
             if (hasSpace) {
-                return spaceBlock.getZ();
+                return spaceBlock.getY();
             }
         }
         
