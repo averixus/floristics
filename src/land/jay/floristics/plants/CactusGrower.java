@@ -1,5 +1,5 @@
 /** Copyright (C) 2019 Jay Avery */
-package land.jay.floristics;
+package land.jay.floristics.plants;
 
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -10,7 +10,7 @@ import org.bukkit.block.BlockFace;
 /** Grower for cactus' extra requirements. */
 public class CactusGrower extends BushGrower {
 
-    CactusGrower(double density, double chance) {
+    public CactusGrower(double density, double chance) {
 
         super(Material.CACTUS, false, density, SurfaceType.SAND, chance);
     }

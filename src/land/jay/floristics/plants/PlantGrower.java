@@ -1,5 +1,5 @@
 /** Copyright (C) 2019 Jay Avery */
-package land.jay.floristics;
+package land.jay.floristics.plants;
 
 import java.util.Random;
 import java.util.Set;
@@ -43,7 +43,7 @@ public abstract class PlantGrower {
     public abstract void grow(World world, int x, int z);
     
     /** Types of growing surface. */
-    protected enum SurfaceType {
+    public enum SurfaceType {
         
         DIRT(Material.DIRT, Material.GRASS_BLOCK),
         FUNGI(Material.DIRT, Material.GRASS_BLOCK, Material.PODZOL, Material.MYCELIUM, Material.NETHERRACK),

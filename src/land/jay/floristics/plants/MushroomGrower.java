@@ -1,4 +1,4 @@
-package land.jay.floristics;
+package land.jay.floristics.plants;
 
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -12,7 +12,7 @@ public class MushroomGrower extends BushGrower {
     /** Whether this grower should check for light levels. */
     private final boolean dark;
 
-    MushroomGrower(Material material, double density, double chance, boolean dark) {
+    public MushroomGrower(Material material, double density, double chance, boolean dark) {
 
         super(material, false, density, dark ? SurfaceType.DARK_FUNGI : SurfaceType.FUNGI, chance);
         this.dark = dark;

@@ -1,5 +1,5 @@
 /** Copyright (C) 2019 Jay Avery */
-package land.jay.floristics;
+package land.jay.floristics.plants;
 
 import java.util.Set;
 import org.bukkit.Material;
@@ -9,6 +9,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.type.Leaves;
 import com.google.common.collect.Sets;
+import land.jay.floristics.Floristics;
 
 /** Grower for tree structures. */
 public class TreeGrower extends PlantGrower {

@@ -7,7 +7,13 @@ import org.bukkit.TreeType;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import com.google.common.collect.Lists;
-import land.jay.floristics.PlantGrower.SurfaceType;
+import land.jay.floristics.plants.BushGrower;
+import land.jay.floristics.plants.CactusGrower;
+import land.jay.floristics.plants.MushroomGrower;
+import land.jay.floristics.plants.PlantGrower;
+import land.jay.floristics.plants.SugarcaneGrower;
+import land.jay.floristics.plants.TreeGrower;
+import land.jay.floristics.plants.PlantGrower.SurfaceType;
 
 /** Handler for growth depending on biome. */
 public enum BiomeGrower {
@@ -344,9 +350,7 @@ public enum BiomeGrower {
     
     /** Attempts to add this plant grower if it is enabled by config. */
     protected void add(PlantGrower grower) {
-        
         if (Floristics.isEnabled(grower.material)) {
-            
             this.plants.add(grower);
         }
     }

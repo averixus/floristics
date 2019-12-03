@@ -1,5 +1,5 @@
 /** Copyright (C) 2019 Jay Avery */
-package land.jay.floristics;
+package land.jay.floristics.plants;
 
 import java.util.Random;
 import java.util.Set;
@@ -12,6 +12,7 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Bisected;
 import org.bukkit.block.data.Bisected.Half;
 import com.google.common.collect.Sets;
+import land.jay.floristics.Floristics;
 
 /** Grower for simple plants. */
 public class BushGrower extends PlantGrower {
@@ -35,7 +36,7 @@ public class BushGrower extends PlantGrower {
     /** Radius to check density in. */
     protected final int radius;
 
-    BushGrower(Material material, boolean isWater, double density, SurfaceType surface, double chance) {
+    public BushGrower(Material material, boolean isWater, double density, SurfaceType surface, double chance) {
         
         super(material, surface, chance);
         this.isDouble = material.data == Bisected.class;
