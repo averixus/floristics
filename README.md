@@ -45,4 +45,4 @@ By default, growth does not occur in Towns. This can be adjusted by the mayor by
 * Floristics is Copyright (C) 2019 Jay Avery. It was originally inspired by [Botany](https://dev.bukkit.org/projects/botany), Copyright (C) 2014 Auke Kok.
 * View the source code on [GitHub](https://github.com/JayAvery/floristics).
 * Give us [issues](https://github.com/JayAvery/floristics/issues)!
-* Donate via [PayPal](http://paypal.me/jayvery).
+* Donate via [PayPal](http://paypal.me/jayvery), or buy a [present](https://www.amazon.co.uk/hz/wishlist/ls/22GQXZHNZSH4O).
