@@ -75,8 +75,8 @@ public class Floristics extends JavaPlugin {
         hasRp = Bukkit.getPluginManager().getPlugin("RedProtect") != null;
         hasTy = Bukkit.getPluginManager().getPlugin("Towny") != null;
         
-        if (hasWg) { WorldGuardWrapper.onLoad(); }
-        if (hasTy) { TownyWrapper.onLoad(); }
+        if (hasWg) { hasWg = WorldGuardWrapper.onLoad(); }
+        if (hasTy) { hasTy = TownyWrapper.onLoad(); }
     }
     
     @Override
@@ -84,8 +84,8 @@ public class Floristics extends JavaPlugin {
         
         this.getCommand("floristics").setExecutor(this);
 
-        if (hasGp) { GriefPreventionWrapper.onEnable(); }
-        if (hasRp) { RedProtectWrapper.onEnable(); }
+        if (hasGp) { hasGp = GriefPreventionWrapper.onEnable(); }
+        if (hasRp) { hasRp = RedProtectWrapper.onEnable(); }
         
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this,
                 () -> this.growCycle(), delay, delay);

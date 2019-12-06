@@ -19,13 +19,17 @@ public class TownyWrapper {
     /** Custom field for growth permission. */
     private static final BooleanDataField FIELD = new BooleanDataField("floristics", false);
     
-    public static void onLoad() {
+    /** @return Whether compatibility was successfully set up. */
+    public static boolean onLoad() {
         
         Floristics.info("Towny is present, adding field to registry.");
         try {
             TownyAPI.getInstance().registerCustomDataField(FIELD);
+            return true;
         } catch (KeyAlreadyRegisteredException ex) {
-            Floristics.error("Someone has already registered a floristics field for Towny, this should never happen!", ex);
+            Floristics.error("Someone has already registered a floristics field for Towny, this should never happen!\n" +
+                    "Towny compatibility will be DISABLED.", ex);
+            return false;
         }
     }
     

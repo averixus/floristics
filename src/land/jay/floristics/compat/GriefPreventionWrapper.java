@@ -31,7 +31,8 @@ public class GriefPreventionWrapper {
     /** Set of claims with growth enabled. */
     private static Set<Long> enabledClaims = Sets.newHashSet();
     
-    public static void onEnable() {
+    /** @return Whether compatibility was successfully set up. */
+    public static boolean onEnable() {
 
         Floristics.info("GriefPrevention is present, preparing gp.yml.");
         
@@ -40,18 +41,12 @@ public class GriefPreventionWrapper {
             Floristics.instance.saveResource("gp.yml", false);
         }
         
+        InputStream stream = Floristics.instance.getResource("gp.yml");        
         claimsConfig = YamlConfiguration.loadConfiguration(claimsFile);
-        final InputStream stream = Floristics.instance.getResource("gp.yml");
-        if (stream == null) {
-            Floristics.error("Something went wrong reading gp.yml, this should never happen!", null);
-            return;
-        }
-
         claimsConfig.setDefaults(YamlConfiguration.loadConfiguration(new InputStreamReader(stream, Charsets.UTF_8)));
         List<Long> list = claimsConfig.getLongList("gp");
-        if (!list.isEmpty()) {
-            enabledClaims.addAll(list);
-        }
+        enabledClaims.addAll(list);        
+        return true;
     }
 
     public static boolean canGrow(Location location) {
