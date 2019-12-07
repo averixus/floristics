@@ -22,9 +22,11 @@ public class MushroomGrower extends BushGrower {
     protected int search(World world, Biome biome, int searchX, int searchZ) {
         
         int targetY = super.search(world, biome, searchX, searchZ);
+        Block block = world.getBlockAt(searchX, targetY, searchZ);
         
         if (targetY > 0 && this.dark &&
-                world.getBlockAt(searchX, targetY, searchZ).getLightLevel() > 12) {
+                (block.getLightLevel() > 12 || block.getLightFromSky() > 12)) {
+                
                 return INVALID;
         }
         
