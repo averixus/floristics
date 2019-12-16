@@ -77,7 +77,7 @@ public class BushGrower extends PlantGrower {
     /** Attempts to place this bush at the location. */
     protected void placeBush(World world, int x, int z) {
         
-        int targetY = this.search(world, world.getBiome(x, z), x, z);
+        int targetY = this.search(world, world.getBiome(x, world.getHighestBlockYAt(x, z), z), x, z);
         
         if (targetY < 0) {
             return;
@@ -106,10 +106,6 @@ public class BushGrower extends PlantGrower {
         
     /** @return The target y coordinate for this bush, or -1 if it's present and -2 if invalid. */
     protected int search(World world, Biome biome, int searchX, int searchZ) {
-
-        if (biome != world.getBiome(searchX, searchZ)) {
-            return INVALID;
-        }
         
         Block surfaceBlock = world.getHighestBlockAt(searchX, searchZ);
         Material surfaceMaterial = surfaceBlock.getType();
@@ -135,7 +131,11 @@ public class BushGrower extends PlantGrower {
             }
             
             if (hasSpace) {
-                return spaceBlock.getY();
+                if (biome != world.getBiome(searchX, spaceBlock.getY(), searchZ)) {
+                    return INVALID;
+                } else {
+                    return spaceBlock.getY();
+                }
             }
         }
         
@@ -151,7 +151,7 @@ public class BushGrower extends PlantGrower {
         for (int xCheck = x - this.radius; xCheck < x + this.radius; xCheck++) {
             for (int zCheck = z - this.radius; zCheck < z + this.radius; zCheck++) {
  
-                int result = this.search(world, world.getBiome(x, z), xCheck, zCheck);
+                int result = this.search(world, world.getBiome(x, world.getHighestBlockYAt(x, z), z), xCheck, zCheck);
                 
                 if (result == PRESENT) {
                     foundCount++;

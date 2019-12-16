@@ -368,7 +368,7 @@ public enum BiomeGrower {
     
     /** Handles growth at the given location. */
     public static void handleGrowth(World world, int x, int z) {
-        get(world.getBiome(x, z)).growSomething(world, x, z);
+        get(world.getBiome(x, world.getHighestBlockYAt(x, z), z)).growSomething(world, x, z);
     }
     
     /** @return The appropriate BiomeGrower for the given Biome. */
