@@ -26,7 +26,7 @@ public class Floristics extends JavaPlugin {
     public static final Random RAND = new Random();
     
     /** Track the current config file version. */
-    private static final int CONFIG_VERSION = 4;
+    private static final int CONFIG_VERSION = 5;
     
     /** Config ticks between growth cycles. */
     private static int delay = 1;

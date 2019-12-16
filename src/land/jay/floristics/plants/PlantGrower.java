@@ -53,7 +53,8 @@ public abstract class PlantGrower {
         DEAD(Material.SAND, Material.RED_SAND, Material.PODZOL, Material.DIRT, Material.COARSE_DIRT, Material.TERRACOTTA, Material.BLACK_TERRACOTTA, Material.GRAY_TERRACOTTA, Material.LIGHT_GRAY_TERRACOTTA, Material.WHITE_TERRACOTTA, Material.BLUE_TERRACOTTA, Material.LIGHT_BLUE_TERRACOTTA, Material.CYAN_TERRACOTTA, Material.GREEN_TERRACOTTA, Material.LIME_TERRACOTTA, Material.YELLOW_TERRACOTTA, Material.ORANGE_TERRACOTTA, Material.RED_TERRACOTTA, Material.PINK_TERRACOTTA, Material.MAGENTA_TERRACOTTA, Material.PURPLE_TERRACOTTA, Material.BROWN_TERRACOTTA),
         SAND(Material.SAND, Material.RED_SAND),
         WATER(Material.WATER),
-        END(Material.END_STONE);
+        END(Material.END_STONE),
+        BEE(Material.OAK_LOG, Material.BIRCH_LOG);
         
         /** Valid materials for this type of surface. */
         private final Set<Material> surfaces;

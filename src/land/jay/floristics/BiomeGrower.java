@@ -7,6 +7,7 @@ import org.bukkit.TreeType;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import com.google.common.collect.Lists;
+import land.jay.floristics.plants.BeeGrower;
 import land.jay.floristics.plants.BushGrower;
 import land.jay.floristics.plants.CactusGrower;
 import land.jay.floristics.plants.MushroomGrower;
@@ -33,6 +34,7 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new BeeGrower(0.05));
         this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
         this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05));
@@ -52,6 +54,7 @@ public enum BiomeGrower {
         this.add(new BushGrower(Material.PUMPKIN, false, 0.01, SurfaceType.DIRT, 0.01));
         this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.05));
         this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.02));
+        this.add(new BeeGrower(0.05));
         this.add(new MushroomGrower(Material.BROWN_MUSHROOM, 0.01, 0.25, true));
         this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.05)); 
@@ -283,6 +286,7 @@ public enum BiomeGrower {
        this.add(new TreeGrower(TreeType.TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.95));
        this.add(new TreeGrower(TreeType.BIG_TREE, Material.OAK_LOG, 7, SurfaceType.DIRT, 0.3));
        this.add(new TreeGrower(TreeType.BIRCH, Material.BIRCH_LOG, 7, SurfaceType.DIRT, 0.95));
+       this.add(new BeeGrower(0.05));
        this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.2));
        this.add(new BushGrower(Material.POPPY, false, 0.15, SurfaceType.DIRT, 0.1));
        this.add(new BushGrower(Material.DANDELION, false, 0.15, SurfaceType.DIRT, 0.1));

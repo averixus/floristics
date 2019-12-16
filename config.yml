@@ -1,4 +1,4 @@
-config-version: 4 # Do not edit! Used for internal checks 
+config-version: 5 # Do not edit! Used for internal checks 
 delay: 1 # Number of ticks between growth cycles
 growths: 1 # Number of growth attempts per cycle
 worlds: # List of worlds growth should happen in
@@ -49,3 +49,4 @@ plants: # Whether each plant should grow
     CHORUS_PLANT: true # Chorus tree
     PUMPKIN: true # Pumpkin
     MELON: true # Melon
+    BEE_NEST: true # Natural bee nest
