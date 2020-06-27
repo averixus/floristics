@@ -33,6 +33,7 @@ public class WorldGuardWrapper {
     public static boolean canGrow(Location location) {
         
         RegionQuery query = WorldGuard.getInstance().getPlatform().getRegionContainer().createQuery();
-        return query.getApplicableRegions(BukkitAdapter.adapt(location)).queryValue(null, FLAG) == State.ALLOW;
+        State result = query.getApplicableRegions(BukkitAdapter.adapt(location)).queryValue(null, FLAG);
+        return result == null || result == State.ALLOW;
     }
 }
