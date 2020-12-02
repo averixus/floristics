@@ -1,4 +1,3 @@
-/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics;
 
 import java.io.File;
@@ -19,6 +18,8 @@ import land.jay.floristics.compat.GriefPreventionWrapper;
 import land.jay.floristics.compat.RedProtectWrapper;
 import land.jay.floristics.compat.TownyWrapper;
 import land.jay.floristics.compat.WorldGuardWrapper;
+import land.jay.floristics.growers.DefaultBiomeGrower;
+import land.jay.floristics.growers.VivaldiSeasonGrower;
 
 public class Floristics extends JavaPlugin {
     
@@ -45,6 +46,8 @@ public class Floristics extends JavaPlugin {
     private static boolean hasRp = false;
     /** Whether Towny is present. */
     private static boolean hasTy = false;
+    /** Whether Vivaldi is present. */
+    public static boolean hasVivaldi = false;
 
     @Override
     public void onLoad() {
@@ -74,6 +77,11 @@ public class Floristics extends JavaPlugin {
         hasWg = Bukkit.getPluginManager().getPlugin("WorldGuard") != null;
         hasRp = Bukkit.getPluginManager().getPlugin("RedProtect") != null;
         hasTy = Bukkit.getPluginManager().getPlugin("Towny") != null;
+		hasVivaldi = Bukkit.getPluginManager().getPlugin("Vivaldi") != null;
+		
+		if (hasVivaldi) {
+			info("Detected using of Vivaldi. Changing from DefaultBiomeGrower to VivaldiSeasonGrower...");
+		}
         
         if (hasWg) { hasWg = WorldGuardWrapper.onLoad(); }
         if (hasTy) { hasTy = TownyWrapper.onLoad(); }
@@ -102,7 +110,9 @@ public class Floristics extends JavaPlugin {
                         Chunk chunk = chunks[RAND.nextInt(chunks.length)];
                         int x = (chunk.getX() * 16) + RAND.nextInt(16);
                         int z = (chunk.getZ() * 16) + RAND.nextInt(16);
-                        BiomeGrower.handleGrowth(world, x, z);
+                        if (hasVivaldi) {
+                        	VivaldiSeasonGrower.handleGrowth(world, x, z);
+                        } else DefaultBiomeGrower.handleGrowth(world, x, z);
                     }
                 }
             }
