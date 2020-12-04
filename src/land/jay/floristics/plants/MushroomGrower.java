@@ -1,10 +1,10 @@
+/** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics.plants;
 
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 
 /** Grower for mushrooms' extra requirements. */
 public class MushroomGrower extends BushGrower {

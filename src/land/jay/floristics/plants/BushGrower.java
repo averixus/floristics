@@ -3,7 +3,6 @@ package land.jay.floristics.plants;
 
 import java.util.Random;
 import java.util.Set;
-import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
@@ -47,6 +46,7 @@ public class BushGrower extends PlantGrower {
     
     @Override
     public void grow(World world,  int x, int z) {
+		
         if (this.isPresent(world, x, z) && (this.calcDensity(world, x, z) < this.getLocalDensity(world, x, z))) {
             this.placeBush(world, x, z);
         }

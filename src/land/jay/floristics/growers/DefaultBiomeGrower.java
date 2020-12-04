@@ -1,5 +1,5 @@
 /** Copyright (C) 2019 Jay Avery */
-package land.jay.floristics;
+package land.jay.floristics.growers;
 
 import java.util.List;
 import org.bukkit.Material;
@@ -7,6 +7,8 @@ import org.bukkit.TreeType;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import com.google.common.collect.Lists;
+
+import land.jay.floristics.Floristics;
 import land.jay.floristics.plants.BeeGrower;
 import land.jay.floristics.plants.BushGrower;
 import land.jay.floristics.plants.CactusGrower;
@@ -17,7 +19,7 @@ import land.jay.floristics.plants.TreeGrower;
 import land.jay.floristics.plants.PlantGrower.SurfaceType;
 
 /** Handler for growth depending on biome. */
-public enum BiomeGrower {
+public enum DefaultBiomeGrower {
     
     PLAINS {{
         this.add(new BushGrower(Material.GRASS, false, 0.3, SurfaceType.DIRT, 1));
@@ -362,6 +364,7 @@ public enum BiomeGrower {
     /** Attempts to grow a random plant for this biome. */
     public void growSomething(World world, int x, int z) {
         if (!this.plants.isEmpty()) {
+        	
             this.plants.get(Floristics.RAND.nextInt(this.plants.size())).grow(world, x, z);
         }
     }
@@ -372,7 +375,7 @@ public enum BiomeGrower {
     }
     
     /** @return The appropriate BiomeGrower for the given Biome. */
-    private static BiomeGrower get(Biome biome) {
+    private static DefaultBiomeGrower get(Biome biome) {
         
         switch (biome) {
             
@@ -430,8 +433,8 @@ public enum BiomeGrower {
                 return END;
             case BEACH:
                 return BEACH;
-            case NETHER: 
-                return NETHER;
+            //case NETHER: 
+              //  return NETHER;
             case FROZEN_OCEAN: case DEEP_FROZEN_OCEAN: case THE_END: case FROZEN_RIVER: case STONE_SHORE: case SNOWY_BEACH: case SMALL_END_ISLANDS: case END_MIDLANDS: case END_BARRENS: case THE_VOID: case ICE_SPIKES:
             default:
                 return BARREN;

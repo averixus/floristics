@@ -1,7 +1,6 @@
 /** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics.compat;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import br.net.fabiozumbi12.RedProtect.Bukkit.RedProtect;
 import br.net.fabiozumbi12.RedProtect.Bukkit.Region;
