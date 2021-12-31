@@ -1,6 +1,8 @@
 /** Copyright (C) 2019 Jay Avery */
 package land.jay.floristics.compat;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -34,16 +36,9 @@ public class TownyWrapper {
     }
     
     public static boolean canGrow(Location location) {
-        
-        Town town;
-        try {
-            TownBlock block = TownyAPI.getInstance().getTownBlock(location);
-            town = block == null ? null : block.getTown();        
-        } catch (NotRegisteredException ex) {
-            Floristics.error("Something went wrong in the Towny API, this should never happen!", ex);
-            return false;
-        }
-        
+
+
+        Town town = TownyAPI.getInstance().getTown(location);
         if (town == null) {
             return true;
         }
@@ -51,6 +46,7 @@ public class TownyWrapper {
         if (!town.hasMeta() || !town.getMetadata().contains(FIELD)) {
             town.addMetaData(FIELD);
         }
+
         BooleanDataField field = null;
         for (CustomDataField metadata : town.getMetadata()) {
             if (metadata.equals(FIELD)) {
@@ -81,25 +77,21 @@ public class TownyWrapper {
             return;
         }
         
-        Resident resident;
-        Town town;
-        try {
-            resident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
-            TownBlock block = TownyAPI.getInstance().getTownBlock(player.getLocation());
-            town = block == null ? null : block.getTown();        
-        } catch (NotRegisteredException ex) {
-            Floristics.error("Something went wrong in the Towny API, this should never happen!", ex);
+        Resident resident = TownyAPI.getInstance().getResident(player.getUniqueId());
+        if (resident == null) {
+            player.sendMessage(Component.text("Error: could not find your resident data!", NamedTextColor.RED));
             return;
         }
-        
-        if (town == null || !town.isMayor(resident)) {
-            player.sendMessage("You are not in a Town you own.");
-            return;
+
+        Town town = TownyAPI.getInstance().getResidentTownOrNull(resident);
+        if (!resident.isMayor() || town == null) {
+            player.sendMessage(Component.text("You are not a town mayor.", NamedTextColor.RED));
         }
         
         if (!town.getMetadata().contains(FIELD)) {
             town.addMetaData(FIELD);
         }
+
         BooleanDataField field = null;
         for (CustomDataField metadata : town.getMetadata()) {
             if (metadata.equals(FIELD)) {
