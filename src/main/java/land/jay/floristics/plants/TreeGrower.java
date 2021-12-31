@@ -43,6 +43,11 @@ public class TreeGrower extends PlantGrower {
     protected void placeTree(World world, int x, int z) {
 
         Block placeBlock = world.getHighestBlockAt(x, z);
+
+        if (placeBlock.isLiquid()) {
+            return;
+        }
+
         Block surfaceBlock = placeBlock.getRelative(BlockFace.DOWN);
         Material surfaceMaterial = surfaceBlock.getType();
         

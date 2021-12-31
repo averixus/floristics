@@ -33,10 +33,9 @@ public abstract class PlantGrower {
         int chunkX = x >> 4;
         int chunkZ = z >> 4;
         Random random = new Random(world.getSeed() +
-                (this.material.ordinal() * chunkX * 0x4c1906) + (chunkX * 0x5ac0db) + 
-                (this.material.ordinal() * 0x4307a7L) + (chunkZ * 0x5f24f) ^ 0x3ad8025f); 
-        boolean result = random.nextFloat() < this.chance;
-        return result;
+                ((long) this.material.ordinal() * chunkX * 0x4c1906) + (chunkX * 0x5ac0dbL) +
+                (this.material.ordinal() * 0x4307a7L) + (chunkZ * 0x5f24fL) ^ 0x3ad8025f);
+        return random.nextFloat() < this.chance;
     }
 
     /** Attempts to grow this plant. */
