@@ -15,10 +15,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.google.common.collect.Sets;
-import land.jay.floristics.compat.GriefPreventionWrapper;
-import land.jay.floristics.compat.RedProtectWrapper;
 import land.jay.floristics.compat.TownyWrapper;
-import land.jay.floristics.compat.WorldGuardWrapper;
 
 public class Floristics extends JavaPlugin {
     
@@ -70,12 +67,9 @@ public class Floristics extends JavaPlugin {
             }
         }
         
-        hasGp = Bukkit.getPluginManager().getPlugin("GriefPrevention") != null;
         hasWg = Bukkit.getPluginManager().getPlugin("WorldGuard") != null;
-        hasRp = Bukkit.getPluginManager().getPlugin("RedProtect") != null;
         hasTy = Bukkit.getPluginManager().getPlugin("Towny") != null;
         
-        if (hasWg) { hasWg = WorldGuardWrapper.onLoad(); }
         if (hasTy) { hasTy = TownyWrapper.onLoad(); }
     }
     
@@ -83,9 +77,6 @@ public class Floristics extends JavaPlugin {
     public void onEnable() {
         
         this.getCommand("floristics").setExecutor(this);
-
-        if (hasGp) { hasGp = GriefPreventionWrapper.onEnable(); }
-        if (hasRp) { hasRp = RedProtectWrapper.onEnable(); }
         
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this,
                 () -> this.growCycle(), delay, delay);
@@ -118,9 +109,6 @@ public class Floristics extends JavaPlugin {
     public static boolean hasPermission(Location location) {
         
         boolean result = true;
-        result = hasGp ? result && GriefPreventionWrapper.canGrow(location) : result;
-        result = hasWg ? result && WorldGuardWrapper.canGrow(location) : result;            
-        result = hasRp ? result && RedProtectWrapper.canGrow(location) : result;
         result = hasTy ? result && TownyWrapper.canGrow(location) : result;
         return result;
     }
@@ -132,14 +120,8 @@ public class Floristics extends JavaPlugin {
             sender.sendMessage("This command is only for use with GriefPrevention or Towny.");
             return true;
         }
-        
-        if (args.length > 0 && args[0].equals("gp")) {
-            if (hasGp) {
-                GriefPreventionWrapper.handleCommand(sender, args);
-            } else {
-                sender.sendMessage("This command is only for use with GriefPrevention.");
-            }
-        } else if (args.length > 0 && args[0].equals("towny")) {
+
+       if (args.length > 0 && args[0].equals("towny")) {
             if (hasTy) {
                 TownyWrapper.handleCommand(sender, args);
             } else {

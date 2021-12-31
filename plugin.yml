@@ -1,10 +1,10 @@
 name: Floristics
 main: land.jay.floristics.Floristics
-version: 2.5.1
-api-version: 1.15
-softdepend: [GriefPrevention, WorldGuard, RedProtect, Towny]
+version: 2.6
+api-version: 1.17
+softdepend: [Towny]
 commands:
     floristics:
         aliases: flo
-        description: enable or disable growth in GriefPrevention claims or Towny towns
+        description: enable or disable growth in Towny towns
         usage: /floristics ...
