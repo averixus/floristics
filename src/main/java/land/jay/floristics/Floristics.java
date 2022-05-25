@@ -2,6 +2,7 @@
 package land.jay.floristics;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 import java.util.logging.Level;
@@ -10,9 +11,11 @@ import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.google.common.collect.Sets;
 import land.jay.floristics.compat.TownyWrapper;
@@ -30,16 +33,10 @@ public class Floristics extends JavaPlugin {
     /** Config growth attempts per cycle. */
     private static int growths = 1;
     /** Config worlds to grow in. */
-    private static Set<String> worlds = Sets.newHashSet();
+    private static final Set<String> worlds = new HashSet<>();
     /** Config plants to grow. */
-    private static Set<Material> plants = Sets.newHashSet();
+    private static final Set<Material> plants = new HashSet<>();
 
-    /** Whether GriefPrevention is present. */
-    private static boolean hasGp = false;
-    /** Whether WorldGuard is present. */
-    private static boolean hasWg = false;
-    /** Whether RedProtect is present. */
-    private static boolean hasRp = false;
     /** Whether Towny is present. */
     private static boolean hasTy = false;
 
@@ -67,9 +64,7 @@ public class Floristics extends JavaPlugin {
             }
         }
         
-        hasWg = Bukkit.getPluginManager().getPlugin("WorldGuard") != null;
         hasTy = Bukkit.getPluginManager().getPlugin("Towny") != null;
-        
         if (hasTy) { hasTy = TownyWrapper.onLoad(); }
     }
     
@@ -81,15 +76,35 @@ public class Floristics extends JavaPlugin {
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this,
                 () -> this.growCycle(), delay, delay);
     }
-    
+
     /** Attempts growth in each enabled world. */
     private void growCycle() {
-        
+
+        for (Player player: Bukkit.getOnlinePlayers()) {
+            World world = player.getWorld();
+            if (!worlds.contains(world.getName())) {
+                continue;
+            }
+
+            int x = RAND.nextInt(player.getViewDistance() * 16);
+            int z = RAND.nextInt(player.getViewDistance() * 16);
+
+            Block block = world.getBlockAt(x, 64, z);
+            if (!block.getLocation().isChunkLoaded()) {
+                world.getChunkAtAsync(block.getLocation()).thenAccept(chunk -> BiomeGrower.handleGrowth(world, chunk.getX(), chunk.getZ()));
+            }
+            else {
+                Chunk chunk = block.getChunk();
+                BiomeGrower.handleGrowth(world, chunk.getX(), chunk.getZ());
+            }
+        }
+
+        /*
         for (World world : Bukkit.getWorlds()) {
             if (worlds.contains(world.getName())) {
                 Chunk[] chunks = world.getLoadedChunks();
                 if (chunks.length > 0) {
-                    for (int i = 0; i < growths; i++) {
+                    for (int i = 0; i < Bukkit.getServer().getOnlinePlayers().size(); i++) {
                         Chunk chunk = chunks[RAND.nextInt(chunks.length)];
                         int x = (chunk.getX() * 16) + RAND.nextInt(16);
                         int z = (chunk.getZ() * 16) + RAND.nextInt(16);
@@ -98,6 +113,7 @@ public class Floristics extends JavaPlugin {
                 }
             }
         }
+         */
     }
     
     /** @return Whether growth of this plant is enabled. */
@@ -107,16 +123,13 @@ public class Floristics extends JavaPlugin {
     
     /** @return Whether growth is allowed at this location. */
     public static boolean hasPermission(Location location) {
-        
-        boolean result = true;
-        result = hasTy ? result && TownyWrapper.canGrow(location) : result;
-        return result;
+        return TownyWrapper.canGrow(location);
     }
     
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
-        if (!hasGp && !hasTy) {
+        if (!hasTy) {
             sender.sendMessage("This command is only for use with GriefPrevention or Towny.");
             return true;
         }
@@ -125,15 +138,6 @@ public class Floristics extends JavaPlugin {
             if (hasTy) {
                 TownyWrapper.handleCommand(sender, args);
             } else {
-                sender.sendMessage("This command is only for use with Towny.");
-            }
-        } else {
-            if (hasGp && hasTy) {
-                sender.sendMessage("Use /floristics gp [enable|disable] for GriefPrevention permissions.\n" +
-                        "or /floristics towny [enable|disable] for Towny permissions.");
-            } else if (hasGp) {
-                sender.sendMessage("Use /floristics gp [enable|disable] for GriefPrevention permissions.");
-            } else if (hasTy) {
                 sender.sendMessage("Use /floristics towny [enable|disable] for Towny permissions.");
             }
         }
