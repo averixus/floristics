@@ -80,7 +80,7 @@ public enum BiomeGrower {
         this.add(new MushroomGrower(Material.RED_MUSHROOM, 0.01, 0.12, true));
         this.add(new SugarcaneGrower(0.4, 0.25));
     }},
-    MOUNTAINS {{
+    MOUNTAIN {{
         this.add(new BushGrower(Material.GRASS, false, 0.15, SurfaceType.DIRT, 0.13));
         this.add(new BushGrower(Material.DANDELION, false, 0.02, SurfaceType.DIRT, 0.01));
         this.add(new BushGrower(Material.POPPY, false, 0.02, SurfaceType.DIRT, 0.01));
@@ -373,56 +373,54 @@ public enum BiomeGrower {
     
     /** @return The appropriate BiomeGrower for the given Biome. */
     private static BiomeGrower get(Biome biome) {
-        
+
         switch (biome) {
-            
-            case PLAINS:
+
+            case PLAINS: case MEADOW:
                 return PLAINS;
             case SUNFLOWER_PLAINS:
                 return SUNFLOWER_PLAINS;
             case OCEAN: case DEEP_OCEAN: case COLD_OCEAN: case DEEP_COLD_OCEAN: case LUKEWARM_OCEAN: case DEEP_LUKEWARM_OCEAN:
                 return COOL_OCEAN;
-            case WARM_OCEAN: case DEEP_WARM_OCEAN:
+            case WARM_OCEAN:
                 return WARM_OCEAN;
-            case DESERT: case DESERT_HILLS: case DESERT_LAKES:
+            case DESERT:
                 return DESERT;
-            case MOUNTAINS: case MOUNTAIN_EDGE: case GRAVELLY_MOUNTAINS: case MODIFIED_GRAVELLY_MOUNTAINS:
-                return MOUNTAINS;
-            case WOODED_MOUNTAINS:
-                return WOODED_MOUNTAINS;
-            case FOREST: case WOODED_HILLS:
+            case STONY_PEAKS:
+                return MOUNTAIN;
+            case FOREST:
                 return FOREST;
-            case TAIGA: case TAIGA_HILLS: case TAIGA_MOUNTAINS:
+            case TAIGA:
                 return TAIGA;
-            case SNOWY_TAIGA: case SNOWY_TAIGA_HILLS: case SNOWY_TAIGA_MOUNTAINS:
+            case SNOWY_TAIGA: case GROVE:
                 return SNOWY_TAIGA;
-            case GIANT_TREE_TAIGA: case GIANT_TREE_TAIGA_HILLS: case GIANT_SPRUCE_TAIGA: case GIANT_SPRUCE_TAIGA_HILLS:
+            case OLD_GROWTH_PINE_TAIGA: case OLD_GROWTH_SPRUCE_TAIGA:
                 return MEGA_TAIGA;
-            case SWAMP: case SWAMP_HILLS:
+            case SWAMP:
                 return SWAMP;
-            case SNOWY_TUNDRA: case SNOWY_MOUNTAINS:
+            case SNOWY_PLAINS: case SNOWY_SLOPES: case JAGGED_PEAKS: case FROZEN_PEAKS:
                 return TUNDRA;
-            case MUSHROOM_FIELDS: case MUSHROOM_FIELD_SHORE:
+            case MUSHROOM_FIELDS:
                 return MUSHROOM;
-            case JUNGLE: case JUNGLE_HILLS: case MODIFIED_JUNGLE:
+            case JUNGLE:
                 return JUNGLE;
-            case JUNGLE_EDGE: case MODIFIED_JUNGLE_EDGE:
+            case SPARSE_JUNGLE:
                 return JUNGLE_EDGE;
-            case BAMBOO_JUNGLE: case BAMBOO_JUNGLE_HILLS:
+            case BAMBOO_JUNGLE:
                 return BAMBOO_JUNGLE;
-            case SAVANNA: case SAVANNA_PLATEAU: case SHATTERED_SAVANNA: case SHATTERED_SAVANNA_PLATEAU:
+            case SAVANNA: case SAVANNA_PLATEAU: case WINDSWEPT_SAVANNA:
                 return SAVANNA;
-            case BADLANDS: case BADLANDS_PLATEAU: case MODIFIED_BADLANDS_PLATEAU: case ERODED_BADLANDS:
+            case BADLANDS: case ERODED_BADLANDS:
                 return BADLANDS;
-            case WOODED_BADLANDS_PLATEAU: case MODIFIED_WOODED_BADLANDS_PLATEAU:
+            case WOODED_BADLANDS:
                 return WOODED_BADLANDS;
-            case DARK_FOREST: case DARK_FOREST_HILLS:
+            case DARK_FOREST:
                 return DARK_FOREST;
             case FLOWER_FOREST:
                 return FLOWER_FOREST;
-            case BIRCH_FOREST: case BIRCH_FOREST_HILLS:
+            case BIRCH_FOREST:
                 return BIRCH_FOREST;
-            case TALL_BIRCH_FOREST: case TALL_BIRCH_HILLS:
+            case OLD_GROWTH_BIRCH_FOREST:
                 return TALL_BIRCH;
             case RIVER:
                 return RIVER;
@@ -432,7 +430,7 @@ public enum BiomeGrower {
                 return BEACH;
             case BASALT_DELTAS: case NETHER_WASTES: case WARPED_FOREST: case CRIMSON_FOREST: case SOUL_SAND_VALLEY:
                 return NETHER;
-            case FROZEN_OCEAN: case DEEP_FROZEN_OCEAN: case THE_END: case FROZEN_RIVER: case STONE_SHORE: case SNOWY_BEACH: case SMALL_END_ISLANDS: case END_MIDLANDS: case END_BARRENS: case THE_VOID: case ICE_SPIKES:
+            case FROZEN_OCEAN: case DEEP_FROZEN_OCEAN: case THE_END: case FROZEN_RIVER: case STONY_SHORE: case SNOWY_BEACH: case SMALL_END_ISLANDS: case END_MIDLANDS: case END_BARRENS: case THE_VOID: case ICE_SPIKES:
             default:
                 return BARREN;
         }
