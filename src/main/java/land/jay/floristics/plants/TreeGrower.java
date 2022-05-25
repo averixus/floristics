@@ -2,6 +2,8 @@
 package land.jay.floristics.plants;
 
 import java.util.Set;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.TreeType;
 import org.bukkit.World;
@@ -42,13 +44,13 @@ public class TreeGrower extends PlantGrower {
     /** Attempts to place this tree at the location. */
     protected void placeTree(World world, int x, int z) {
 
-        Block placeBlock = world.getHighestBlockAt(x, z);
+        Block placeBlock = world.getHighestBlockAt(x, z).getRelative(BlockFace.UP);
 
-        if (placeBlock.isLiquid()) {
+        Block surfaceBlock = placeBlock.getRelative(BlockFace.DOWN);
+        if (surfaceBlock.isLiquid()) {
             return;
         }
 
-        Block surfaceBlock = placeBlock.getRelative(BlockFace.DOWN);
         Material surfaceMaterial = surfaceBlock.getType();
         
         while (SEARCH_DOWN.contains(surfaceMaterial)) {
