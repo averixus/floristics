@@ -36,9 +36,11 @@ public class Floristics extends JavaPlugin {
     private static final Set<String> worlds = new HashSet<>();
     /** Config plants to grow. */
     private static final Set<Material> plants = new HashSet<>();
-
     /** Whether Towny is present. */
     private static boolean hasTy = false;
+
+    /** CCNet - max MSPT for growth */
+    private static int maxMSPT = 40;
 
     @Override
     public void onLoad() {
@@ -56,6 +58,7 @@ public class Floristics extends JavaPlugin {
         
         delay = this.getConfig().getInt("delay");
         growths = this.getConfig().getInt("growths");
+        maxMSPT = this.getConfig().getInt("max-mspt");
         worlds.addAll(this.getConfig().getStringList("worlds"));
         ConfigurationSection section = this.getConfig().getConfigurationSection("plants");
         for (String key : section.getKeys(false)) {
@@ -79,6 +82,10 @@ public class Floristics extends JavaPlugin {
 
     /** Attempts growth in each enabled world. */
     private void growCycle() {
+        // Skip if average MSPT is greater than growth MSPT limit
+        if (Bukkit.getServer().getAverageTickTime() > maxMSPT) {
+            return;
+        }
 
         for (Player player: Bukkit.getOnlinePlayers()) {
             World world = player.getWorld();
