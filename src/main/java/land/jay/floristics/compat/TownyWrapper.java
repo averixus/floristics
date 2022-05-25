@@ -31,17 +31,15 @@ public class TownyWrapper {
         } catch (KeyAlreadyRegisteredException ex) {
             Floristics.error("Someone has already registered a floristics field for Towny, this should never happen!\n" +
                     "Towny compatibility will be DISABLED.", ex);
-            return false;
+            return true;
         }
     }
     
     public static boolean canGrow(Location location) {
 
+        return TownyAPI.getInstance().isWilderness(location);
 
-        Town town = TownyAPI.getInstance().getTown(location);
-        if (town == null) {
-            return true;
-        }
+        /*
         
         if (!town.hasMeta() || !town.getMetadata().contains(FIELD)) {
             town.addMetaData(FIELD);
@@ -53,8 +51,10 @@ public class TownyWrapper {
                 field = (BooleanDataField) metadata;
             }
         }
-        
+
         return field.getValue();
+
+         */
     }
     
     public static void handleCommand(CommandSender sender, String[] args) {
