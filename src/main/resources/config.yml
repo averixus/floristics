@@ -1,6 +1,7 @@
 config-version: 5 # Do not edit! Used for internal checks 
 delay: 1 # Number of ticks between growth cycles
 growths: 1 # Number of growth attempts per cycle
+max-mspt: 40 # MSPT above which to stop growing
 worlds: # List of worlds growth should happen in
 - world
 - world_the_end
@@ -41,7 +42,7 @@ plants: # Whether each plant should grow
     COCOA: true # Jungle tree with cocoa beans
     SPRUCE_LOG: true # Spruce tree
     DARK_OAK_LOG: true # Dark oak tree
-    ACACIA_LOG: true # Acacia tree
+    ACACIA_LOG: false # Acacia tree
     LILY_PAD: true # Lily pad
     SEAGRASS: true # Single-height seagrass
     TALL_SEAGRASS: true # Double-height seagrass
